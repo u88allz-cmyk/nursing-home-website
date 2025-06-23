@@ -56,31 +56,11 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "대표전화",
-      content: "02-0000-0000",
-      subtitle: "평일 08:00-18:00 / 토요일 08:00-13:00",
-      color: "primary"
-    },
-    {
-      icon: Ambulance,
-      title: "응급실",
-      content: "02-0000-1119",
-      subtitle: "24시간 운영",
-      color: "destructive"
-    },
-    {
-      icon: Calendar,
-      title: "예약센터",
-      content: "1588-0000",
-      subtitle: "평일 08:00-17:00",
-      color: "accent"
-    },
-    {
-      icon: Mail,
-      title: "이메일",
-      content: "info@ourhospital.co.kr",
-      subtitle: "",
-      color: "primary"
+      title: "대표전화 연결하기",
+      content: "0507-1381-0016",
+      subtitle: "평일 09:00-18:00 / 토요일 09:00-13:00",
+      color: "primary",
+      href: "tel:0507-1381-0016"
     }
   ];
 
@@ -101,28 +81,27 @@ const Contact = () => {
               <h2 className="text-3xl font-semibold mb-8 text-gray-900">요양원 상담문의</h2>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <Card key={index} className="shadow-sm">
-                    <CardContent className="flex items-start p-6">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 ${
-                        info.color === 'primary' ? 'bg-primary/10' :
-                        info.color === 'destructive' ? 'bg-destructive/10' :
-                        info.color === 'accent' ? 'bg-accent/10' : 'bg-primary/10'
-                      }`}>
-                        <info.icon className={`h-5 w-5 ${
-                          info.color === 'primary' ? 'text-primary' :
-                          info.color === 'destructive' ? 'text-destructive' :
-                          info.color === 'accent' ? 'text-accent' : 'text-primary'
-                        }`} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 text-gray-900">{info.title}</h3>
-                        <p className="text-gray-600 mb-1 font-medium">{info.content}</p>
-                        {info.subtitle && (
-                          <p className="text-sm text-gray-500">{info.subtitle}</p>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <a 
+                    key={index}
+                    href={info.href}
+                    className="block"
+                  >
+                    <Card className="shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary cursor-pointer">
+                      <CardContent className="flex items-start p-8">
+                        <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
+                          <info.icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold mb-2 text-gray-900">{info.title}</h3>
+                          <p className="text-gray-600 mb-1">클릭하시면 바로 연결됩니다</p>
+                          <p className="text-3xl font-bold text-primary mb-2">{info.content}</p>
+                          {info.subtitle && (
+                            <p className="text-sm text-gray-500">{info.subtitle}</p>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </a>
                 ))}
               </div>
             </div>
@@ -174,10 +153,10 @@ const Contact = () => {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="general">일반 진료</SelectItem>
-                              <SelectItem value="checkup">건강검진</SelectItem>
-                              <SelectItem value="admission">입원 문의</SelectItem>
-                              <SelectItem value="emergency">응급 문의</SelectItem>
+                              <SelectItem value="admission">입소 상담</SelectItem>
+                              <SelectItem value="visit">방문 상담</SelectItem>
+                              <SelectItem value="care">케어 프로그램</SelectItem>
+                              <SelectItem value="facility">시설 문의</SelectItem>
                               <SelectItem value="other">기타</SelectItem>
                             </SelectContent>
                           </Select>
