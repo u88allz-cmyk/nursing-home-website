@@ -25,16 +25,16 @@ const Header = () => {
               alt="해와달 요양원 로고" 
               className="h-[70px] w-auto object-contain"
             />
-            <h1 className="ml-4 text-2xl font-semibold" style={{ color: '#C69C6D', fontFamily: 'ChosunilboMyeongjo, serif' }}>
+            <h1 className="hidden sm:block ml-4 text-2xl font-semibold" style={{ color: '#C69C6D', fontFamily: 'ChosunilboMyeongjo, serif' }}>
               해와달 요양원
             </h1>
           </Link>
           
           {/* Navigation */}
-          <nav className="flex space-x-4 sm:space-x-8 lg:space-x-12">
+          <nav className="flex space-x-3 sm:space-x-8 lg:space-x-12">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <span className={`text-xs sm:text-sm md:text-base lg:text-lg font-medium transition-colors duration-200 hover:text-primary ${
+                <span className={`text-sm sm:text-base lg:text-lg font-medium transition-colors duration-200 hover:text-primary whitespace-nowrap ${
                   isActiveLink(item.href) ? "text-primary" : "text-muted-foreground"
                 }`}>
                   {item.label}
