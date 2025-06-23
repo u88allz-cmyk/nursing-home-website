@@ -1,23 +1,26 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import hero1 from "@/assets/hero1.jpg";
+import hero2 from "@/assets/hero2.jpg";
+import hero3 from "@/assets/hero3.jpg";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: hero1,
       title: "따뜻한 보살핌과 전문 케어",
       subtitle: "어르신들의 건강하고 행복한 노후를 위해"
     },
     {
-      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: hero2,
       title: "안전하고 쾌적한 환경",
       subtitle: "집처럼 편안한 요양원에서의 생활"
     },
     {
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: hero3,
       title: "가족같은 따뜻한 돌봄",
       subtitle: "개별 맞춤 케어로 행복한 일상을"
     }
