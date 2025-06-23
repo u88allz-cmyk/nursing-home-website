@@ -1,54 +1,54 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Bone, Baby, Eye, Brain, Stethoscope, Clock, User } from "lucide-react";
+import { Heart, Activity, Users, Palette, Shield, MessageCircle, Clock, User } from "lucide-react";
 
 const Programs = () => {
   const programs = [
     {
       icon: Heart,
-      title: "내과",
-      description: "고혈압, 당뇨병, 심장질환 등 내과 전반에 걸친 진료를 제공합니다.",
-      schedule: "월-금 09:00-18:00",
-      doctor: "김○○ 과장",
+      title: "일상생활 지원",
+      description: "식사, 목욕, 복약관리 등 어르신들의 일상생활을 세심하게 도와드립니다.",
+      schedule: "24시간",
+      staff: "생활지원사",
       color: "primary"
     },
     {
-      icon: Bone,
-      title: "정형외과",
-      description: "관절, 척추, 외상 등 근골격계 질환의 전문적인 치료를 제공합니다.",
-      schedule: "월-토 09:00-17:00",
-      doctor: "이○○ 과장",
+      icon: Activity,
+      title: "물리치료 프로그램",
+      description: "관절 운동, 근력 강화, 보행 훈련을 통해 신체 기능을 유지합니다.",
+      schedule: "월-금 09:00-17:00",
+      staff: "물리치료사",
       color: "secondary"
     },
     {
-      icon: Baby,
-      title: "소아청소년과",
-      description: "신생아부터 청소년까지 아이들의 건강한 성장을 돕습니다.",
-      schedule: "월-금 09:00-18:00",
-      doctor: "박○○ 과장",
+      icon: Users,
+      title: "인지 활동 프로그램",
+      description: "치매 예방과 인지능력 향상을 위한 다양한 활동을 제공합니다.",
+      schedule: "월-금 10:00-16:00",
+      staff: "작업치료사",
       color: "accent"
     },
     {
-      icon: Eye,
-      title: "안과",
-      description: "백내장, 녹내장, 망막질환 등 안과 질환의 정밀 진료를 제공합니다.",
-      schedule: "화-토 09:00-17:00",
-      doctor: "최○○ 과장",
+      icon: Palette,
+      title: "여가 문화 프로그램",
+      description: "음악, 미술, 원예 등 다양한 여가 활동으로 삶의 질을 높입니다.",
+      schedule: "주 3회 14:00-16:00",
+      staff: "여가지도사",
       color: "primary"
     },
     {
-      icon: Brain,
-      title: "신경과",
-      description: "뇌졸중, 치매, 두통 등 신경계 질환의 전문 치료를 제공합니다.",
-      schedule: "월-금 09:00-17:00",
-      doctor: "정○○ 과장",
+      icon: Shield,
+      title: "건강 관리 프로그램",
+      description: "정기 건강 체크와 만성질환 관리로 어르신들의 건강을 지킵니다.",
+      schedule: "주 2회 09:00-12:00",
+      staff: "간호사",
       color: "secondary"
     },
     {
-      icon: Stethoscope,
-      title: "건강검진센터",
-      description: "종합건강검진과 맞춤형 건강관리 프로그램을 제공합니다.",
-      schedule: "월-금 08:00-17:00",
-      doctor: "예약문의: 1588-0000",
+      icon: MessageCircle,
+      title: "상담 지원 프로그램",
+      description: "심리적 안정과 정서적 지원을 통해 마음의 건강을 돌봅니다.",
+      schedule: "월-금 14:00-17:00",
+      staff: "사회복지사",
       color: "accent"
     }
   ];
@@ -85,11 +85,11 @@ const Programs = () => {
                   <div className="text-sm text-gray-500">
                     <div className="flex items-center mb-1">
                       <Clock className="h-4 w-4 mr-2" />
-                      <span>진료시간: {program.schedule}</span>
+                      <span>운영시간: {program.schedule}</span>
                     </div>
                     <div className="flex items-center">
                       <User className="h-4 w-4 mr-2" />
-                      <span>전담의: {program.doctor}</span>
+                      <span>담당: {program.staff}</span>
                     </div>
                   </div>
                 </CardContent>
