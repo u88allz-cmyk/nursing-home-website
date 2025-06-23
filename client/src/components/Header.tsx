@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 
@@ -59,6 +59,10 @@ const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-64">
+                <SheetTitle className="sr-only">모바일 네비게이션 메뉴</SheetTitle>
+                <SheetDescription className="sr-only">
+                  해와달 요양원 웹사이트의 주요 페이지들로 이동할 수 있는 네비게이션 메뉴입니다.
+                </SheetDescription>
                 <div className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <Link key={item.href} href={item.href}>
