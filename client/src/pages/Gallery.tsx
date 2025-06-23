@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Upload, ImageIcon } from "lucide-react";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [uploadedImages, setUploadedImages] = useState<string[]>([]);
 
-  const defaultImages = [
+  const images = [
     {
       thumbnail: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
       full: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
@@ -41,30 +37,6 @@ const Gallery = () => {
     }
   ];
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      Array.from(files).forEach(file => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          if (e.target?.result) {
-            setUploadedImages(prev => [...prev, e.target!.result as string]);
-          }
-        };
-        reader.readAsDataURL(file);
-      });
-    }
-  };
-
-  const allImages = [
-    ...defaultImages,
-    ...uploadedImages.map(img => ({
-      thumbnail: img,
-      full: img,
-      alt: "업로드된 이미지"
-    }))
-  ];
-
   return (
     <div className="animate-fade-in">
       <section className="py-20 bg-gray-50">
@@ -76,31 +48,8 @@ const Gallery = () => {
             </p>
           </div>
 
-          {/* 이미지 업로드 섹션 */}
-          <Card className="mb-12 shadow-sm">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900">시설 사진 업로드</h2>
-                <p className="text-gray-600 mb-6">요양원의 새로운 시설 사진을 업로드하여 갤러리에 추가할 수 있습니다.</p>
-                <div className="relative inline-block">
-                  <input
-                    type="file"
-                    multiple
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
-                  <Button className="px-8 py-4 rounded-xl shadow-lg hover:shadow-xl">
-                    <Upload className="mr-2 h-5 w-5" />
-                    사진 업로드
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allImages.map((image, index) => (
+            {images.map((image, index) => (
               <div 
                 key={index}
                 className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105"
