@@ -28,7 +28,7 @@ const Home = () => {
                 <Link href="/about">
                   <Button variant="outline" size="lg" className="px-8 py-4 rounded-xl border-2">
                     <Info className="mr-2 h-5 w-5" />
-                    병원 소개
+                    요양원 소개
                   </Button>
                 </Link>
               </div>
