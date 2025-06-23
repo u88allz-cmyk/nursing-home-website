@@ -10,13 +10,13 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-6">
               <img 
                 src="/logo.png" 
-                alt="우리 병원 로고" 
-                className="h-6 w-auto object-contain filter brightness-0 invert"
+                alt="해와달 요양원 로고" 
+                className="h-6 w-auto object-contain"
               />
-              <h3 className="text-xl font-semibold">우리 병원</h3>
+              <h3 className="text-xl font-semibold">해와달 요양원</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-4">
-              38년 전통의 지역 대표 병원으로 환자 중심의 맞춤형 의료 서비스를 제공합니다.
+              어르신들의 건강하고 행복한 노후를 위한 전문 요양원으로 가족같은 따뜻한 케어를 제공합니다.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200">

@@ -31,7 +31,7 @@ const Header = () => {
           <Link href="/" className="flex-shrink-0">
             <img 
               src="/logo.png" 
-              alt="우리 병원 로고" 
+              alt="해와달 요양원 로고" 
               className="h-10 w-auto object-contain"
             />
           </Link>

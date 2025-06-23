@@ -12,11 +12,11 @@ const Home = () => {
           <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-4xl lg:text-6xl font-light text-gray-900 leading-tight mb-6">
-                건강한 삶을 위한<br />
-                <span className="font-semibold text-primary">전문 의료진</span>
+                따뜻한 보살핌과<br />
+                <span className="font-semibold text-primary">전문 케어</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
-                환자 중심의 맞춤형 치료와 최첨단 의료 장비로 여러분의 건강한 미래를 함께 만들어갑니다.
+                어르신들의 건강하고 행복한 노후를 위해 가족같은 마음으로 최고의 케어 서비스를 제공합니다.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
