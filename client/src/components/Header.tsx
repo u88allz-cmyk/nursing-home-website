@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Hospital, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const [location] = useLocation();
@@ -29,10 +29,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex-shrink-0">
-            <div className="flex items-center space-x-2">
-              <Hospital className="h-6 w-6 text-primary" />
-              <h1 className="text-xl font-semibold text-primary">우리 병원</h1>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="우리 병원 로고" 
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           
           {/* Desktop Navigation */}

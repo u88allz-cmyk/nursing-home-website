@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Hospital, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,7 +8,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <Hospital className="h-6 w-6 text-primary" />
+              <img 
+                src="/logo.png" 
+                alt="우리 병원 로고" 
+                className="h-6 w-auto object-contain filter brightness-0 invert"
+              />
               <h3 className="text-xl font-semibold">우리 병원</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-4">
