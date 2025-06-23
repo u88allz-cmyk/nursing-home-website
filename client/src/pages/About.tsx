@@ -13,9 +13,9 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">병원 소개</h1>
+            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">요양원 소개</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              1985년 개원 이래 지역 사회의 건강을 책임져온 우리 병원은 환자 중심의 의료 서비스를 제공합니다.
+              어르신들의 건강하고 행복한 노후를 위해 가족 같은 따뜻한 마음으로 최고의 케어 서비스를 제공합니다.
             </p>
           </div>
           
