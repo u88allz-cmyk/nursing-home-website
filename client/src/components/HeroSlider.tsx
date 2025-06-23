@@ -72,13 +72,13 @@ const HeroSlider = () => {
                     상담 문의
                   </Button>
                 </Link>
-                <Link href="/gallery">
+                <Link href="/about">
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
+                    className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg backdrop-blur-sm"
                   >
-                    시설 둘러보기
+                    요양원 소개
                   </Button>
                 </Link>
               </div>
