@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/logo.png" 
+                src={logoImg} 
                 alt="해와달 요양원 로고" 
                 className="h-6 w-auto object-contain"
               />

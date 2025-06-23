@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const Header = () => {
   const [location] = useLocation();
@@ -30,7 +31,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex-shrink-0">
             <img 
-              src="/logo.png" 
+              src={logoImg} 
               alt="해와달 요양원 로고" 
               className="h-10 w-auto object-contain"
             />
