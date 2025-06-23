@@ -8,11 +8,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-6">
+            <div className="flex items-center space-x-3 mb-6">
               <img 
                 src={logoImg} 
                 alt="해와달 요양원 로고" 
-                className="h-6 w-auto object-contain"
+                className="h-8 w-auto object-contain"
               />
               <h3 className="text-xl font-semibold">해와달 요양원</h3>
             </div>
