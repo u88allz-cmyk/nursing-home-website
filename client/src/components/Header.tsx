@@ -30,11 +30,11 @@ const Header = () => {
             </h1>
           </Link>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 lg:space-x-12">
+          {/* Navigation */}
+          <nav className="flex space-x-4 sm:space-x-8 lg:space-x-12">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <span className={`text-sm sm:text-base lg:text-lg font-medium transition-colors duration-200 hover:text-primary ${
+                <span className={`text-xs sm:text-sm md:text-base lg:text-lg font-medium transition-colors duration-200 hover:text-primary ${
                   isActiveLink(item.href) ? "text-primary" : "text-muted-foreground"
                 }`}>
                   {item.label}
@@ -42,26 +42,6 @@ const Header = () => {
               </Link>
             ))}
           </nav>
-          
-          {/* Mobile Navigation */}
-          <div className="md:hidden">
-            <select 
-              className="bg-transparent border border-border rounded-lg px-3 py-2 text-sm font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              onChange={(e) => {
-                if (e.target.value) {
-                  window.location.href = e.target.value;
-                }
-              }}
-              value=""
-            >
-              <option value="" disabled>메뉴</option>
-              {navItems.map((item) => (
-                <option key={item.href} value={item.href}>
-                  {item.label}
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
       </div>
     </header>
