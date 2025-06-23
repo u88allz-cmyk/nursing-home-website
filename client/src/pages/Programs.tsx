@@ -69,7 +69,7 @@ const Programs = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">프로그램 안내</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              다양한 전문 진료과와 특별 프로그램으로 환자분들의 건강을 종합적으로 관리합니다.
+              어르신들의 건강하고 활기찬 일상을 위한 다양한 케어 프로그램을 제공합니다.
             </p>
           </div>
 
