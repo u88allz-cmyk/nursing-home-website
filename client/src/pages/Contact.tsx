@@ -87,17 +87,19 @@ const Contact = () => {
                     className="block"
                   >
                     <Card className="shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary cursor-pointer">
-                      <CardContent className="flex items-start p-8">
-                        <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
-                          <info.icon className="h-8 w-8 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold mb-2 text-gray-900">{info.title}</h3>
-                          <p className="text-gray-600 mb-1">클릭하시면 바로 연결됩니다</p>
-                          <p className="text-3xl font-bold text-primary mb-2">{info.content}</p>
-                          {info.subtitle && (
-                            <p className="text-sm text-gray-500">{info.subtitle}</p>
-                          )}
+                      <CardContent className="p-4 sm:p-8">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
+                          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 flex-shrink-0">
+                            <info.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900">{info.title}</h3>
+                            <p className="text-sm sm:text-base text-gray-600 mb-2">클릭하시면 바로 연결됩니다</p>
+                            <p className="text-xl sm:text-3xl font-bold text-primary mb-2 break-all">{info.content}</p>
+                            {info.subtitle && (
+                              <p className="text-xs sm:text-sm text-gray-500">{info.subtitle}</p>
+                            )}
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
