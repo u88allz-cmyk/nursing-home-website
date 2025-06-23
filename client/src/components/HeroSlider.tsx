@@ -53,12 +53,6 @@ const HeroSlider = () => {
           
           <div className="relative h-full flex items-center justify-center">
             <div className="text-center px-4 max-w-4xl mx-auto">
-              <h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-light mb-6 leading-tight text-white drop-shadow-2xl"
-                style={{ fontFamily: 'ChosunilboMyeongjo, serif', textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}
-              >
-                해와달 요양원
-              </h1>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-4 text-yellow-300 drop-shadow-xl" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)' }}>
                 {slide.title}
               </h2>
