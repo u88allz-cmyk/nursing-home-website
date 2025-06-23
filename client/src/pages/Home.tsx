@@ -2,12 +2,16 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Hospital, Stethoscope, Calendar, Info } from "lucide-react";
+import HeroSlider from "@/components/HeroSlider";
 
 const Home = () => {
   return (
     <div className="animate-fade-in">
-      {/* Hero Section */}
-      <section className="relative bg-muted py-20 lg:py-32">
+      {/* Hero Slider Section */}
+      <HeroSlider />
+      
+      {/* Original Hero Section - now hidden */}
+      <section className="relative bg-muted py-20 lg:py-32 hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
             <div className="lg:col-span-6">
