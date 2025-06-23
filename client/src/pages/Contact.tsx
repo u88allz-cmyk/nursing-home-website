@@ -140,30 +140,7 @@ const Contact = () => {
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="category"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>상담 분야</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="상담 분야를 선택해주세요" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="admission">입소 상담</SelectItem>
-                              <SelectItem value="visit">방문 상담</SelectItem>
-                              <SelectItem value="care">케어 프로그램</SelectItem>
-                              <SelectItem value="facility">시설 문의</SelectItem>
-                              <SelectItem value="other">기타</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+
 
                     <FormField
                       control={form.control}
