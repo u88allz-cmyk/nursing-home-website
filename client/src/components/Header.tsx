@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="flex-shrink-0 flex items-center">
@@ -35,7 +35,7 @@ const Header = () => {
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
                 <span className={`text-sm sm:text-base lg:text-lg font-medium transition-colors duration-200 hover:text-primary ${
-                  isActiveLink(item.href) ? "text-primary" : "text-gray-600"
+                  isActiveLink(item.href) ? "text-primary" : "text-muted-foreground"
                 }`}>
                   {item.label}
                 </span>

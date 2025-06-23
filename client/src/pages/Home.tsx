@@ -7,15 +7,15 @@ const Home = () => {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative bg-gray-50 py-20 lg:py-32">
+      <section className="relative bg-muted py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
             <div className="lg:col-span-6">
-              <h1 className="text-4xl lg:text-6xl font-light text-gray-900 leading-tight mb-6">
+              <h1 className="text-4xl lg:text-6xl font-light text-foreground leading-tight mb-6">
                 따뜻한 보살핌과<br />
                 <span className="font-semibold text-primary">전문 케어</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
                 어르신들의 건강하고 행복한 노후를 위해 가족같은 마음으로 최고의 케어 서비스를 제공합니다.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -48,8 +48,8 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-4">왜 우리 병원인가요?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">최고의 의료진과 최첨단 시설로 환자분들의 건강을 책임집니다.</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-foreground mb-4">왜 해와달 요양원인가요?</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">최고의 케어와 따뜻한 마음으로 어르신들의 건강한 노후를 책임집니다.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             <Card className="border-0 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -57,8 +57,8 @@ const Home = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Stethoscope className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">전문 의료진</h3>
-                <p className="text-gray-600 leading-relaxed">각 분야 최고의 전문의들이 환자분 한 분 한 분께 최선을 다합니다.</p>
+                <h3 className="text-xl font-semibold mb-4">전문 케어팀</h3>
+                <p className="text-muted-foreground leading-relaxed">경험 풍부한 전문 케어팀이 어르신 한 분 한 분께 최선을 다합니다.</p>
               </CardContent>
             </Card>
             
@@ -67,8 +67,8 @@ const Home = () => {
                 <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Hospital className="h-8 w-8 text-secondary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">최첨단 시설</h3>
-                <p className="text-gray-600 leading-relaxed">최신 의료 장비와 쾌적한 병원 환경으로 최고의 치료 효과를 제공합니다.</p>
+                <h3 className="text-xl font-semibold mb-4">쾌적한 시설</h3>
+                <p className="text-muted-foreground leading-relaxed">안전하고 편안한 환경으로 어르신들이 집처럼 편안하게 지내실 수 있습니다.</p>
               </CardContent>
             </Card>
             
@@ -77,8 +77,8 @@ const Home = () => {
                 <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Heart className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">환자 중심</h3>
-                <p className="text-gray-600 leading-relaxed">환자의 입장에서 생각하고, 맞춤형 치료로 건강한 일상을 되찾아드립니다.</p>
+                <h3 className="text-xl font-semibold mb-4">가족같은 돌봄</h3>
+                <p className="text-muted-foreground leading-relaxed">어르신의 입장에서 생각하고, 개별 맞춤 케어로 행복한 일상을 만들어드립니다.</p>
               </CardContent>
             </Card>
           </div>
