@@ -25,7 +25,7 @@ const Header = () => {
               alt="해와달 요양원 로고" 
               className="h-[70px] w-auto object-contain"
             />
-            <h1 className="ml-4 text-2xl font-semibold" style={{ color: '#D4AF7A' }}>
+            <h1 className="ml-4 text-2xl font-semibold" style={{ color: '#D4AF7A', fontFamily: 'Gamja Flower, cursive' }}>
               해와달 요양원
             </h1>
           </Link>
