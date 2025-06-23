@@ -39,11 +39,11 @@ const Gallery = () => {
 
   return (
     <div className="animate-fade-in">
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">시설안내</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-4xl lg:text-5xl font-light text-foreground mb-6">시설안내</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               해와달 요양원의 쾌적하고 안전한 시설을 확인해보세요.
             </p>
           </div>
