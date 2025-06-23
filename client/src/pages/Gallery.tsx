@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -68,6 +68,10 @@ const Gallery = () => {
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
+          <DialogTitle className="sr-only">갤러리 이미지 확대 보기</DialogTitle>
+          <DialogDescription className="sr-only">
+            병원 시설 갤러리 이미지를 확대하여 볼 수 있습니다.
+          </DialogDescription>
           {selectedImage && (
             <img 
               src={selectedImage}
