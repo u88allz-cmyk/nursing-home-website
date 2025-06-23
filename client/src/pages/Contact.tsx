@@ -91,14 +91,14 @@ const Contact = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">상담 문의</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              궁금한 사항이나 상담 예약을 원하시면 언제든지 연락해 주세요.
+              입소 상담이나 궁금한 사항이 있으시면 언제든지 연락해 주세요.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16">
             {/* 연락처 정보 */}
             <div>
-              <h2 className="text-3xl font-semibold mb-8 text-gray-900">병원 연락처</h2>
+              <h2 className="text-3xl font-semibold mb-8 text-gray-900">요양원 상담문의</h2>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <Card key={index} className="shadow-sm">
