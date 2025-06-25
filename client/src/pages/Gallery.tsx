@@ -6,6 +6,8 @@ import gallery3 from "@assets/KakaoTalk_20250528_104708745_01_1750829170835.jpg"
 import gallery4 from "@assets/KakaoTalk_20250528_102610842_06_1750829632594.jpg";
 import gallery5 from "@assets/KakaoTalk_20250528_125344906_02_1750829792593.jpg";
 import gallery6 from "@assets/KakaoTalk_20250528_125344906_03_1750829228701.jpg";
+import gallery7 from "@assets/KakaoTalk_20250528_125344906_04_1750829892433.jpg";
+import gallery8 from "@assets/KakaoTalk_20250528_125344906_01_1750829902521.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -40,6 +42,16 @@ const Gallery = () => {
       thumbnail: gallery6,
       full: gallery6,
       alt: "식당 - 넓고 쾌적한 공간"
+    },
+    {
+      thumbnail: gallery7,
+      full: gallery7,
+      alt: "주방 - 현대적인 시설"
+    },
+    {
+      thumbnail: gallery8,
+      full: gallery8,
+      alt: "안내데스크 - 전문적인 접수"
     }
   ];
 
