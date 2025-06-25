@@ -11,9 +11,8 @@ const About = () => {
           <div className="text-center mb-16">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-6">요양원 소개</h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
-              어르신들의 건강하고 행복한 노후를 위해<br className="hidden sm:block" />
-              <span className="sm:hidden">가족 같은 따뜻한 마음으로</span>
-              <span className="hidden sm:inline">가족 같은 따뜻한 마음으로</span><br className="sm:hidden" />
+              어르신들의 건강하고 행복한 노후를 위해 <br className="hidden sm:block" />
+              가족 같은 따뜻한 마음으로<br className="sm:hidden" />
               최고의 케어 서비스를 제공합니다.
             </p>
           </div>
