@@ -1,0 +1,114 @@
+# Healthcare Management System - Replit Development Guide
+
+## Overview
+
+A comprehensive healthcare management system built for a Korean nursing home (해와달 요양원). The application provides a professional website with contact form functionality, facility information, and program details. Built with modern web technologies including React, TypeScript, Express.js, and PostgreSQL.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Routing**: Wouter for client-side routing
+- **UI Framework**: Shadcn/ui components with Radix UI primitives
+- **Styling**: Tailwind CSS with custom Korean typography
+- **State Management**: TanStack Query for server state management
+- **Forms**: React Hook Form with Zod validation
+- **Build Tool**: Vite with custom configuration
+
+### Backend Architecture
+- **Framework**: Express.js with TypeScript
+- **Database**: PostgreSQL with Drizzle ORM
+- **Schema Validation**: Zod for request/response validation
+- **Session Management**: Ready for session-based authentication
+- **API Design**: RESTful endpoints with proper error handling
+
+### Data Storage Solutions
+- **Primary Database**: PostgreSQL (configured via Drizzle)
+- **ORM**: Drizzle ORM with code-first schema approach
+- **Migrations**: Automated through Drizzle Kit
+- **Development Storage**: In-memory storage class for development/testing
+
+## Key Components
+
+### Database Schema
+- **Users Table**: Authentication ready (username, password)
+- **Contacts Table**: Contact form submissions with Korean phone validation
+- **Shared Types**: TypeScript types generated from Drizzle schemas
+
+### API Endpoints
+- `POST /api/contacts` - Submit contact form
+- `GET /api/contacts` - Retrieve contact submissions (admin)
+
+### Frontend Pages
+- **Home**: Hero slider with multiple slides and call-to-action
+- **About**: Facility introduction and statistics
+- **Programs**: Care programs and services offered
+- **Gallery**: Image gallery with modal view
+- **Guide**: Admission and discharge procedures
+- **Contact**: Contact form with Korean phone validation
+- **Location**: Transportation and location information
+- **FAQ**: Frequently asked questions
+
+### UI Components
+- Custom Header with Korean branding
+- Footer with business information
+- Hero slider with automatic progression
+- Form components with validation
+- Responsive design with mobile optimization
+
+## Data Flow
+
+1. **Contact Form Submission**:
+   - User fills form → React Hook Form validation → Zod schema validation → API submission → Database storage → Success feedback
+
+2. **Page Navigation**:
+   - User clicks navigation → Wouter routing → Component rendering → Data fetching (if needed) → Page display
+
+3. **Image Gallery**:
+   - User clicks thumbnail → Modal dialog opens → Full-size image display
+
+4. **Error Handling**:
+   - Client-side validation → Server-side validation → Error response → User feedback via toast notifications
+
+## External Dependencies
+
+### Core Dependencies
+- React ecosystem (React, React DOM, React Hook Form)
+- UI Library (Radix UI components, Lucide React icons)
+- Database (@neondatabase/serverless, Drizzle ORM)
+- Validation (Zod, @hookform/resolvers)
+- Styling (Tailwind CSS, class-variance-authority)
+- Build tools (Vite, TypeScript, ESBuild)
+
+### Development Dependencies
+- Replit-specific plugins for development environment
+- PostgreSQL 16 module for database
+- Korean fonts (Noto Sans KR, Gamja Flower, ChosunilboMyeongjo)
+
+## Deployment Strategy
+
+### Development Environment
+- **Runtime**: Node.js 20
+- **Database**: PostgreSQL 16 (Replit module)
+- **Port Configuration**: 5000 (internal) → 80 (external)
+- **Hot Reload**: Vite development server with HMR
+
+### Production Build
+1. Frontend build: `npm run build` (Vite compilation)
+2. Backend build: ESBuild bundling for Node.js
+3. Static file serving: Express serves built frontend
+4. Database: Environment-based DATABASE_URL configuration
+
+### Replit Configuration
+- Automatic deployment on code changes
+- Environment variable management
+- PostgreSQL database provisioning
+- Custom domain support ready
+
+## Changelog
+
+- June 25, 2025. Initial setup
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.

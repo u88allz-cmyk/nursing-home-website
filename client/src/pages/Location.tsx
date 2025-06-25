@@ -5,26 +5,26 @@ const Location = () => {
   const transportInfo = [
     {
       icon: MapPin,
-      title: "병원 주소",
-      content: "서울특별시 강남구 테헤란로 123\n우리 병원 빌딩 (우: 06234)",
+      title: "요양원 주소",
+      content: "경기 양주시 평화로 1426 건물 6,7층",
       color: "primary"
     },
     {
       icon: TrainFront,
       title: "지하철",
-      content: "2호선 강남역 3번 출구 (도보 5분)\n분당선 선릉역 1번 출구 (도보 8분)",
+      content: "지하철 1호선 덕계역 2번출구\n버스정류장 73-1번 리치마트 정류장 하차",
       color: "secondary"
     },
     {
       icon: Bus,
       title: "버스",
-      content: "간선: 146, 301, 472\n지선: 3422, 3423, 4419\n강남역 정류장 하차",
+      content: "덕계 리치마트 방면 정류장 하차\n(도보 3분이내)",
       color: "accent"
     },
     {
       icon: Car,
       title: "주차 안내",
-      content: "병원 지하 1-3층 (300대 수용)\n평일: 30분 무료, 이후 시간당 2,000원\n주말: 1시간 무료, 이후 시간당 1,000원",
+      content: "1층 지상 주차장 이용 (무료)",
       color: "primary"
     }
   ];
@@ -43,9 +43,9 @@ const Location = () => {
       <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">오시는 길</h1>
+            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">오시는길</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              다양한 교통수단을 이용하여 편리하게 방문하실 수 있습니다.
+              저희 요양원을 찾아오시는 모든 분들을 위한 상세한 위치 안내입니다.
             </p>
           </div>
 
