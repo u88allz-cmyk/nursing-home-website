@@ -1,71 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, TrainFront, Bus, Car } from "lucide-react";
-import { useEffect, useRef } from "react";
-
-declare global {
-  interface Window {
-    naver: any;
-  }
-}
+import { MapPin, TrainFront, Bus, Car, ExternalLink } from "lucide-react";
 
 const Location = () => {
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // 네이버 지도 스크립트 로드
-    const script = document.createElement('script');
-    script.src = 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID';
-    script.async = true;
-    
-    script.onload = () => {
-      if (mapRef.current && window.naver) {
-        const location = new window.naver.maps.LatLng(37.7749, 127.0589); // 양주시 평화로 1426 좌표
-        
-        const map = new window.naver.maps.Map(mapRef.current, {
-          center: location,
-          zoom: 17,
-          mapTypeControl: true
-        });
-
-        // 마커 추가
-        new window.naver.maps.Marker({
-          position: location,
-          map: map,
-          title: '해와달 요양원'
-        });
-
-        // 정보창 추가
-        const infoWindow = new window.naver.maps.InfoWindow({
-          content: [
-            '<div style="padding:10px;min-width:200px;line-height:150%;">',
-            '   <h4 style="margin-top:5px;">해와달 요양원</h4>',
-            '   <p>경기 양주시 평화로 1426<br />',
-            '   건물 6,7층</p>',
-            '</div>'
-          ].join('')
-        });
-
-        window.naver.maps.Event.addListener(map, 'click', () => {
-          infoWindow.open(map, location);
-        });
-      }
-    };
-
-    // 네이버 지도 API가 이미 로드되어 있지 않은 경우에만 스크립트 추가
-    if (!document.querySelector('script[src*="openapi.map.naver.com"]')) {
-      document.head.appendChild(script);
-    } else if (window.naver && mapRef.current) {
-      // 이미 로드된 경우 바로 지도 생성
-      script.onload();
-    }
-
-    return () => {
-      // 컴포넌트 언마운트 시 정리
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, []);
 
   const transportInfo = [
     {
@@ -119,19 +55,23 @@ const Location = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-sm h-96 lg:h-full min-h-[400px]">
                 <CardContent className="p-4 h-full">
-                  <div 
-                    ref={mapRef} 
-                    className="w-full h-full rounded-2xl"
-                    style={{ minHeight: '350px' }}
-                  >
-                    {/* 네이버 지도가 여기에 로드됩니다 */}
-                    <div className="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
-                      <div className="text-center text-gray-500">
-                        <MapPin className="h-16 w-16 mx-auto mb-4" />
-                        <p className="text-lg font-medium">지도 로딩 중...</p>
-                        <p className="text-sm mt-2">네이버 지도 API를 불러오고 있습니다</p>
-                      </div>
-                    </div>
+                  <div className="w-full h-full rounded-2xl overflow-hidden relative">
+                    <iframe
+                      src="https://map.naver.com/p/entry/place/35235382?c=15.00,0,0,0,dh"
+                      className="w-full h-full border-0 rounded-2xl"
+                      style={{ minHeight: '350px' }}
+                      title="해와달 요양원 네이버 지도"
+                      loading="lazy"
+                    />
+                    <a
+                      href="https://map.naver.com/p/entry/place/35235382"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 bg-white/90 hover:bg-white p-2 rounded-lg shadow-md transition-all duration-200 flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-primary"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      크게 보기
+                    </a>
                   </div>
                 </CardContent>
               </Card>
