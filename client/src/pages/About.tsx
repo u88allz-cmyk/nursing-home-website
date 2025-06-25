@@ -41,11 +41,13 @@ const About = () => {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <img 
-                src={aboutImagePath}
-                alt="해와달 요양원 로고" 
-                className="w-80 h-80 object-contain"
-              />
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <img 
+                  src={logoImg}
+                  alt="해와달 요양원 로고" 
+                  className="w-64 h-64 object-contain"
+                />
+              </div>
             </div>
           </div>
 
