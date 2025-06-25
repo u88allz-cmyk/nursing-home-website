@@ -4,7 +4,7 @@ import gallery1 from "@assets/KakaoTalk_20250528_102610842_28_1750829170834.jpg"
 import gallery2 from "@assets/KakaoTalk_20250528_102612362_01_1750829170835.jpg";
 import gallery3 from "@assets/KakaoTalk_20250528_104708745_01_1750829170835.jpg";
 import gallery4 from "@assets/KakaoTalk_20250528_102610842_06_1750829632594.jpg";
-import gallery5 from "@assets/KakaoTalk_20250414_153731808_08_1750829199051.jpg";
+import gallery5 from "@assets/KakaoTalk_20250528_125344906_02_1750829792593.jpg";
 import gallery6 from "@assets/KakaoTalk_20250528_125344906_03_1750829228701.jpg";
 
 const Gallery = () => {
@@ -34,7 +34,7 @@ const Gallery = () => {
     {
       thumbnail: gallery5,
       full: gallery5,
-      alt: "복도 - 밝고 안전한 통로"
+      alt: "복도 - 넓고 밝은 통로"
     },
     {
       thumbnail: gallery6,
