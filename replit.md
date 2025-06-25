@@ -124,6 +124,10 @@ A comprehensive healthcare management system built for a Korean nursing home (í•
 - Mobile menu with horizontal three-item layout
 - Enhanced form validation and user feedback
 - Professional color scheme matching logo palette
+- PostgreSQL database integration for contact form
+- Admin dashboard for managing consultation requests
+- CSV export functionality for contact data
+- Real-time contact form processing with database storage
 
 ## User Preferences
 
