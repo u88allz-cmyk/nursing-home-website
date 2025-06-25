@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Activity, Users, Palette, Shield, MessageCircle } from "lucide-react";
+import { Heart, Activity, Users, Palette, Shield, MessageCircle, FileText } from "lucide-react";
 
 const Programs = () => {
   const programs = [
@@ -36,8 +36,14 @@ const Programs = () => {
     {
       icon: MessageCircle,
       title: "상담 지원 프로그램",
-      description: "심리적 안정과 정서적 지원을 통해 마음의 건강을 돌봅니다. 요양등급을 받기 위한 과정도 상세히 안내하고 도움을 드립니다.",
+      description: "심리적 안정과 정서적 지원을 통해 마음의 건강을 돌봅니다. 개별 상담을 통해 어르신들의 정서적 안정을 도모합니다.",
       color: "accent"
+    },
+    {
+      icon: FileText,
+      title: "요양등급 과정 지원 프로그램",
+      description: "요양등급 신청부터 인정조사, 등급 판정까지 전 과정을 체계적으로 안내하고 지원합니다. 서류 작성 및 절차 진행을 전문적으로 도와드립니다.",
+      color: "primary"
     }
   ];
 
