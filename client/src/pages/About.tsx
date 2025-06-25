@@ -9,43 +9,45 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">요양원 소개</h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              어르신들의 건강하고 행복한 노후를 위해<br />
-              가족 같은 따뜻한 마음으로 최고의 케어 서비스를 제공합니다.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-6">요양원 소개</h1>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
+              어르신들의 건강하고 행복한 노후를 위해<br className="hidden sm:block" />
+              <span className="sm:hidden">가족 같은 따뜻한 마음으로</span>
+              <span className="hidden sm:inline">가족 같은 따뜻한 마음으로</span><br className="sm:hidden" />
+              최고의 케어 서비스를 제공합니다.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <h2 className="text-3xl font-semibold mb-8 text-gray-900">우리의 철학</h2>
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+            <div className="px-4 lg:px-0">
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-gray-900">우리의 철학</h2>
+              <div className="space-y-6 sm:space-y-8">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-700 leading-relaxed break-keep">
                     어르신들이 존경받고 사랑받는 환경에서 편안하고 행복한 노후를 보내실 수 있도록 최선을 다합니다.
                   </p>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-700 leading-relaxed break-keep">
                     개별 맞춤 케어를 통해 어르신 한 분 한 분의 특별한 요구사항을 세심하게 살피며 가족 같은 따뜻한 돌봄을 제공합니다.
                   </p>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-700 leading-relaxed break-keep">
                     안전하고 쾌적한 환경에서 어르신들이 건강하고 활기찬 일상을 유지하실 수 있도록 지속적으로 노력하겠습니다.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="flex justify-center items-center px-4 lg:px-0">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
                 <img 
                   src={logoImg}
                   alt="해와달 요양원 로고" 
-                  className="w-64 h-64 object-contain"
+                  className="w-48 h-48 sm:w-64 sm:h-64 object-contain"
                 />
               </div>
             </div>
