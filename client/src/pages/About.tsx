@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import logoImg from "@assets/KakaoTalk_20250416_123236202_07_1750828191302.png";
 import aboutImagePath from "@assets/KakaoTalk_20250416_123236202_07_1750828191302.png";
 
 const About = () => {
