@@ -1,39 +1,45 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import gallery1 from "@assets/KakaoTalk_20250528_102610842_28_1750829170834.jpg";
+import gallery2 from "@assets/KakaoTalk_20250528_102612362_01_1750829170835.jpg";
+import gallery3 from "@assets/KakaoTalk_20250528_104708745_01_1750829170835.jpg";
+import gallery4 from "@assets/KakaoTalk_20250528_102610842_24_1750829170836.jpg";
+import gallery5 from "@assets/KakaoTalk_20250414_153731808_08_1750829199051.jpg";
+import gallery6 from "@assets/KakaoTalk_20250528_125344906_03_1750829228701.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
     {
-      thumbnail: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      full: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      alt: "요양원 로비"
+      thumbnail: gallery1,
+      full: gallery1,
+      alt: "요양원 병실 - 깔끔한 환경"
     },
     {
-      thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      full: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      alt: "요양원 복도"
+      thumbnail: gallery2,
+      full: gallery2,
+      alt: "개인 욕실 - 안전한 시설"
     },
     {
-      thumbnail: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      full: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      alt: "의료 장비"
+      thumbnail: gallery3,
+      full: gallery3,
+      alt: "치료실 - 전문 의료 장비"
     },
     {
-      thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      full: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      alt: "요양원 침실"
+      thumbnail: gallery4,
+      full: gallery4,
+      alt: "개인실 - 편안한 침실"
     },
     {
-      thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      full: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      alt: "상담실"
+      thumbnail: gallery5,
+      full: gallery5,
+      alt: "복도 - 밝고 안전한 통로"
     },
     {
-      thumbnail: "https://images.unsplash.com/photo-1594736797933-d0eeaa0bf6e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      full: "https://images.unsplash.com/photo-1594736797933-d0eeaa0bf6e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      alt: "요양원 외관"
+      thumbnail: gallery6,
+      full: gallery6,
+      alt: "식당 - 넓고 쾌적한 공간"
     }
   ];
 
