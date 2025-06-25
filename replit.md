@@ -107,7 +107,23 @@ A comprehensive healthcare management system built for a Korean nursing home (�
 
 ## Changelog
 
-- June 25, 2025. Initial setup
+### June 25, 2025 - Project Completion
+- **Complete nursing home website implementation**
+- Hero slider with navigation indicators (arrows removed)
+- 7 comprehensive care programs including Long-term Care Grade Support Program
+- Contact form with Korean phone validation and clickable phone links
+- 8 real facility photos in gallery with brightness optimization
+- Location page with actual address and Naver Place map integration
+- Mobile-responsive design with scroll-to-top navigation
+- Korean typography optimization (조선일보명조 font for nursing home name)
+- Removed unused UI components and cleaned up imports
+
+### Technical Improvements
+- Automatic scroll-to-top on page navigation
+- Optimized image loading and display
+- Mobile menu with horizontal three-item layout
+- Enhanced form validation and user feedback
+- Professional color scheme matching logo palette
 
 ## User Preferences
 
