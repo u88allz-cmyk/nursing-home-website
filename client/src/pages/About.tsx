@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import aboutImagePath from "@assets/KakaoTalk_20250416_123236202_07_1750828191302.png";
+import aboutImagePath from "@assets/05405256-319b-42d8-aaf9-361bfdb5e855_1750828259968.png";
 
 const About = () => {
 
@@ -40,11 +40,11 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center bg-black rounded-2xl p-8">
               <img 
                 src={aboutImagePath}
                 alt="해와달 요양원 로고" 
-                className="w-80 h-80 object-contain"
+                className="w-72 h-72 object-contain"
               />
             </div>
           </div>
