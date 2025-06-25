@@ -17,11 +17,26 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
-              <h2 className="text-3xl font-semibold mb-6 text-gray-900">우리의 철학</h2>
-              <div className="space-y-6 text-gray-600 leading-relaxed">
-                <p>어르신들이 존경받고 사랑받는 환경에서 편안하고 행복한 노후를 보내실 수 있도록 최선을 다합니다.</p>
-                <p>개별 맞춤 케어를 통해 어르신 한 분 한 분의 특별한 요구사항을 세심하게 살피며 가족 같은 따뜻한 돌봄을 제공합니다.</p>
-                <p>안전하고 쾌적한 환경에서 어르신들이 건강하고 활기찬 일상을 유지하실 수 있도록 지속적으로 노력하겠습니다.</p>
+              <h2 className="text-3xl font-semibold mb-8 text-gray-900">우리의 철학</h2>
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    어르신들이 존경받고 사랑받는 환경에서 편안하고 행복한 노후를 보내실 수 있도록 최선을 다합니다.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    개별 맞춤 케어를 통해 어르신 한 분 한 분의 특별한 요구사항을 세심하게 살피며 가족 같은 따뜻한 돌봄을 제공합니다.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    안전하고 쾌적한 환경에서 어르신들이 건강하고 활기찬 일상을 유지하실 수 있도록 지속적으로 노력하겠습니다.
+                  </p>
+                </div>
               </div>
             </div>
             <div>
