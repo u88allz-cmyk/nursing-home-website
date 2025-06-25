@@ -1,10 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
-  const stats = [
-    { number: "120", unit: "실", label: "생활 시설" },
-    { number: "45", unit: "명", label: "전문 인력" },
-  ];
+
 
   return (
     <div className="animate-fade-in">
@@ -36,21 +33,7 @@ const About = () => {
             </div>
           </div>
 
-          <Card className="shadow-sm">
-            <CardContent className="p-8 lg:p-12">
-              <h2 className="text-3xl font-semibold mb-12 text-center text-gray-900">요양원 현황</h2>
-              <div className="grid md:grid-cols-2 gap-8 text-center max-w-2xl mx-auto">
-                {stats.map((stat, index) => (
-                  <div key={index} className="p-6">
-                    <div className="text-4xl font-bold text-primary mb-2">
-                      {stat.number}<span className="text-2xl">{stat.unit}</span>
-                    </div>
-                    <p className="text-gray-600">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+
         </div>
       </section>
     </div>
