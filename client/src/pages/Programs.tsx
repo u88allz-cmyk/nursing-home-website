@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Activity, Users, Palette, Shield, MessageCircle, FileText } from "lucide-react";
 
 const Programs = () => {
+  useEffect(() => {
+    document.title = "프로그램 안내 - 해와달 요양원 | 7가지 전문 케어 프로그램";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "해와달 요양원의 7가지 전문 케어 프로그램을 확인하세요. 일상생활 지원, 물리치료, 인지활동, 요양등급 과정 지원 등 체계적인 케어 서비스를 제공합니다.");
+    }
+  }, []);
   const programs = [
     {
       icon: Heart,

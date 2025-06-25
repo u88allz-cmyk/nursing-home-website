@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import gallery1 from "@assets/KakaoTalk_20250528_102610842_28_1750829170834.jpg";
 import gallery2 from "@assets/KakaoTalk_20250528_102612362_01_1750829170835.jpg";
@@ -11,6 +11,14 @@ import gallery8 from "@assets/KakaoTalk_20250528_125344906_01_1750829902521.jpg"
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  useEffect(() => {
+    document.title = "시설안내 - 해와달 요양원 | 깔끔하고 안전한 시설";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "해와달 요양원의 쾌적하고 안전한 시설을 사진으로 확인하세요. 병실, 욕실, 치료실, 식당 등 최신 시설과 편의시설을 갖추고 있습니다.");
+    }
+  }, []);
 
   const images = [
     {
@@ -77,6 +85,8 @@ const Gallery = () => {
                   src={image.thumbnail}
                   alt={image.alt}
                   className="w-full h-64 object-cover brightness-110 contrast-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
