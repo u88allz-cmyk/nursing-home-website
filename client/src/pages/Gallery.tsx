@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import gallery1 from "@assets/KakaoTalk_20250528_102610842_28_1750829170834.jpg";
 import gallery2 from "@assets/KakaoTalk_20250528_102612362_01_1750829170835.jpg";
 import gallery3 from "@assets/KakaoTalk_20250528_104708745_01_1750829170835.jpg";
-import gallery4 from "@assets/KakaoTalk_20250528_102610842_24_1750829170836.jpg";
+import gallery4 from "@assets/KakaoTalk_20250528_102610842_06_1750829632594.jpg";
 import gallery5 from "@assets/KakaoTalk_20250414_153731808_08_1750829199051.jpg";
 import gallery6 from "@assets/KakaoTalk_20250528_125344906_03_1750829228701.jpg";
 
@@ -29,7 +29,7 @@ const Gallery = () => {
     {
       thumbnail: gallery4,
       full: gallery4,
-      alt: "개인실 - 편안한 침실"
+      alt: "출입문 - 깨끗한 입구"
     },
     {
       thumbnail: gallery5,
