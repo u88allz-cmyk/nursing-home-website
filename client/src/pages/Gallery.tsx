@@ -64,7 +64,7 @@ const Gallery = () => {
                 <img 
                   src={image.thumbnail}
                   alt={image.alt}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-cover brightness-110 contrast-105"
                 />
               </div>
             ))}
@@ -82,7 +82,7 @@ const Gallery = () => {
             <img 
               src={selectedImage}
               alt="Gallery image"
-              className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+              className="w-full h-auto max-h-[90vh] object-contain rounded-lg brightness-110 contrast-105"
             />
           )}
         </DialogContent>
