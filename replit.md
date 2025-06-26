@@ -107,6 +107,13 @@ A comprehensive healthcare management system built for a Korean nursing home (í•
 
 ## Changelog
 
+### June 26, 2025 - Netlify Deployment Fixed
+- **Resolved Netlify deployment issues**
+- Fixed CSS loading problems by ensuring proper file structure
+- Updated netlify.toml to use pre-built static files from dist folder
+- Successfully deployed to https://bespoke-alpaca-f24586.netlify.app/
+- All styling and functionality now working correctly on live site
+
 ### June 25, 2025 - Project Completion
 - **Complete nursing home website implementation**
 - Hero slider with navigation indicators (arrows removed)

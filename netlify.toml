@@ -1,7 +1,6 @@
 [build]
-  base = "client"
-  command = "echo 'Using pre-built static files'"
-  publish = "dist"
+  command = "cp -r dist client/ && echo 'Static files ready'"
+  publish = "client/dist"
 
 [[redirects]]
   from = "/*"
