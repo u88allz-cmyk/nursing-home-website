@@ -207,14 +207,14 @@ const Contact = () => {
                     </label>
                   </div>
 
-                  <button 
+                  <Button 
                     type="submit" 
-                    className="w-full py-4 px-6 rounded-xl shadow-lg hover:shadow-xl bg-amber-600 text-white hover:bg-amber-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    className="w-full py-4 px-6 rounded-xl shadow-lg hover:shadow-xl bg-primary text-primary-foreground hover:bg-primary/90"
                     disabled={isSubmitted}
                   >
                     <Send className="mr-2 h-5 w-5" />
                     {isSubmitted ? "전송 완료" : "상담 신청하기"}
-                  </button>
+                  </Button>
                 </form>
               </CardContent>
             </Card>
