@@ -209,7 +209,7 @@ const Contact = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full py-4 px-6 rounded-xl shadow-lg hover:shadow-xl"
+                    className="w-full py-4 px-6 rounded-xl shadow-lg hover:shadow-xl bg-primary text-primary-foreground hover:bg-primary/90"
                     disabled={isSubmitted}
                   >
                     <Send className="mr-2 h-5 w-5" />
