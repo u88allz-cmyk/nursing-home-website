@@ -1,79 +1,34 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/hooks/use-toast";
 import { Phone, Calendar, Mail, Ambulance, Send } from "lucide-react";
-import { insertContactSchema, type InsertContact } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
-import { z } from "zod";
-
-const contactFormSchema = insertContactSchema.extend({
-  agreed: z.boolean().refine((val: boolean) => val === true, {
-    message: "개인정보 수집 및 이용에 동의해야 합니다.",
-  }),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
-  const { toast } = useToast();
-  const queryClient = useQueryClient();
-  
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      category: "",
-      message: "",
-      agreed: false,
-    },
-  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const createContactMutation = useMutation({
-    mutationFn: async (data: InsertContact) => {
-      const response = await fetch("/api/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      
-      if (!response.ok) {
-        throw new Error("Failed to submit contact form");
-      }
-      
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "상담 신청 완료",
-        description: "상담 신청이 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.",
-      });
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    
+    // 폼 데이터를 직접 제출 (Netlify가 처리)
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // Netlify Forms는 자동으로 폼을 처리하므로 추가 작업 불필요
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+    .then(() => {
+      // 성공 메시지 표시
+      setIsSubmitted(true);
       form.reset();
-      queryClient.invalidateQueries({ queryKey: ["/api/contacts"] });
-    },
-    onError: (error) => {
-      toast({
-        title: "전송 실패",
-        description: "상담 신청 중 오류가 발생했습니다. 다시 시도해 주세요.",
-        variant: "destructive",
-      });
-      console.error("Error submitting contact form:", error);
-    },
-  });
-
-  const onSubmit = (data: ContactFormData) => {
-    const { agreed, ...contactData } = data;
-    createContactMutation.mutate(contactData);
+    })
+    .catch((error) => {
+      console.error("Form submission error:", error);
+      setIsSubmitted(false);
+    });
   };
 
   const contactInfo = [
@@ -258,7 +213,7 @@ const Contact = () => {
                     disabled={isSubmitted}
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    {isSubmitted ? "전송 중..." : "상담 신청하기"}
+                    {isSubmitted ? "전송 완료" : "상담 신청하기"}
                   </Button>
                 </form>
               </CardContent>

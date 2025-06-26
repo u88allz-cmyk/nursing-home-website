@@ -16,7 +16,15 @@
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="tel" name="phone" />
+      <select name="category">
+        <option value="입소상담">입소 상담</option>
+        <option value="방문상담">방문 상담</option>
+        <option value="요양등급">요양등급 관련</option>
+        <option value="비용문의">비용 문의</option>
+        <option value="기타">기타</option>
+      </select>
       <textarea name="message"></textarea>
+      <input type="checkbox" name="agreed" />
     </form>
   </head>
   <body>
