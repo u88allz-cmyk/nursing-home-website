@@ -1,6 +1,6 @@
 [build]
-  base = "client" 
-  command = "npm ci && NODE_ENV=production npx vite build"
+  base = "client"
+  command = "echo 'Using pre-built static files'"
   publish = "dist"
 
 [[redirects]]
