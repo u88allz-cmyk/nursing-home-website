@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 강제 CSS 재컴파일 */
-
 :root {
   --background: 250, 245, 239;
   --foreground: 70, 49, 28;
