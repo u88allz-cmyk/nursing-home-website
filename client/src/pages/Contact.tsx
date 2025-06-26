@@ -1,15 +1,79 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
 import { Phone, Calendar, Mail, Ambulance, Send } from "lucide-react";
+import { insertContactSchema, type InsertContact } from "@shared/schema";
+import { apiRequest } from "@/lib/queryClient";
+import { z } from "zod";
+
+const contactFormSchema = insertContactSchema.extend({
+  agreed: z.boolean().refine((val: boolean) => val === true, {
+    message: "개인정보 수집 및 이용에 동의해야 합니다.",
+  }),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+  
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      category: "",
+      message: "",
+      agreed: false,
+    },
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    setIsSubmitted(true);
-    // Netlify Forms가 실제 제출을 처리
-    setTimeout(() => setIsSubmitted(false), 3000);
+  const createContactMutation = useMutation({
+    mutationFn: async (data: InsertContact) => {
+      const response = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to submit contact form");
+      }
+      
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "상담 신청 완료",
+        description: "상담 신청이 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.",
+      });
+      form.reset();
+      queryClient.invalidateQueries({ queryKey: ["/api/contacts"] });
+    },
+    onError: (error) => {
+      toast({
+        title: "전송 실패",
+        description: "상담 신청 중 오류가 발생했습니다. 다시 시도해 주세요.",
+        variant: "destructive",
+      });
+      console.error("Error submitting contact form:", error);
+    },
+  });
+
+  const onSubmit = (data: ContactFormData) => {
+    const { agreed, ...contactData } = data;
+    createContactMutation.mutate(contactData);
   };
 
   const contactInfo = [
