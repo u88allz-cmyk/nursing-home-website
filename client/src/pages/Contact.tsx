@@ -1,63 +1,82 @@
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
+import { insertContactSchema, type InsertContact } from "@shared/schema";
 import { Phone, Calendar, Mail, Ambulance, Send } from "lucide-react";
 
 const Contact = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+  
+  const form = useForm<InsertContact>({
+    resolver: zodResolver(insertContactSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      category: "",
+      message: "",
+      agreed: 0,
+    },
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    setIsSubmitted(true);
-    // Netlify Forms가 실제 제출을 처리
-    setTimeout(() => setIsSubmitted(false), 3000);
+  const contactMutation = useMutation({
+    mutationFn: async (data: InsertContact) => {
+      const response = await apiRequest('POST', '/api/contacts', data);
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "상담 신청 완료",
+        description: "상담 신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.",
+      });
+      form.reset();
+    },
+    onError: (error) => {
+      toast({
+        title: "상담 신청 실패",
+        description: error.message || "상담 신청 중 오류가 발생했습니다.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const onSubmit = (data: InsertContact) => {
+    contactMutation.mutate(data);
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      title: "전화 상담",
+      title: "대표전화 연결하기",
       content: "0507-1381-0016",
-      subtitle: "평일 09:00 - 18:00",
+      subtitle: "평일 09:00-18:00 / 토요일 09:00-13:00",
+      color: "primary",
       href: "tel:0507-1381-0016"
-    },
-    {
-      icon: Mail,
-      title: "이메일 문의",
-      content: "haewadal@care.com",
-      subtitle: "24시간 접수 가능",
-      href: "mailto:haewadal@care.com"
-    },
-    {
-      icon: Calendar,
-      title: "방문 상담",
-      content: "사전 예약 필수",
-      subtitle: "평일 10:00 - 17:00",
-      href: "tel:0507-1381-0016"
-    },
-    {
-      icon: Ambulance,
-      title: "응급 상황",
-      content: "119 또는 응급실",
-      subtitle: "생명이 위급한 경우",
-      href: "tel:119"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-secondary/20">
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
+    <div className="animate-fade-in">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/90 to-secondary bg-clip-text text-transparent">
-              상담 문의
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              해와달 요양원에서 어르신들을 위한 최상의 케어 서비스를 제공합니다.<br />
-              언제든지 편하게 문의해 주세요.
+            <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">상담 문의</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              입소 상담이나 궁금한 사항이 있으시면 언제든지 연락해 주세요.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* 연락처 정보 */}
             <div>
               <h2 className="text-3xl font-semibold mb-8 text-gray-900">요양원 상담문의</h2>
               <div className="space-y-6">
@@ -93,110 +112,88 @@ const Contact = () => {
             <Card className="shadow-sm">
               <CardContent className="p-8 lg:p-12">
                 <h2 className="text-3xl font-semibold mb-8 text-gray-900">온라인 상담</h2>
-                
-                {isSubmitted && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-green-800 font-medium">상담 신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.</p>
-                  </div>
-                )}
-
-                <form 
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                >
-                  {/* Netlify Forms용 숨김 필드 */}
-                  <input type="hidden" name="form-name" value="contact" />
-                  <div style={{ display: 'none' }}>
-                    <input name="bot-field" />
-                  </div>
-
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      이름 *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
                       name="name"
-                      required
-                      placeholder="이름을 입력해주세요"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>이름 *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="이름을 입력해주세요" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </div>
 
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      연락처 *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
+                    <FormField
+                      control={form.control}
                       name="phone"
-                      required
-                      placeholder="010-0000-0000"
-                      pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>연락처 *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="010-0000-0000" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </div>
 
-                  <div>
-                    <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
-                      문의 유형
-                    </label>
-                    <select
-                      id="category"
-                      name="category"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    >
-                      <option value="">문의 유형을 선택해주세요</option>
-                      <option value="입소상담">입소 상담</option>
-                      <option value="방문상담">방문 상담</option>
-                      <option value="요양등급">요양등급 관련</option>
-                      <option value="비용문의">비용 문의</option>
-                      <option value="기타">기타</option>
-                    </select>
-                  </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      문의 내용 *
-                    </label>
-                    <textarea
-                      id="message"
+
+                    <FormField
+                      control={form.control}
                       name="message"
-                      required
-                      rows={5}
-                      placeholder="문의하실 내용을 자세히 입력해주세요"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                    ></textarea>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      id="agreed"
-                      name="agreed"
-                      required
-                      className="mt-1 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>문의 내용 *</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="문의하실 내용을 자세히 입력해주세요"
+                              className="resize-none"
+                              rows={5}
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                    <label htmlFor="agreed" className="text-sm text-gray-600">
-                      개인정보 수집 및 이용에 동의합니다. <span className="text-primary hover:underline cursor-pointer">자세히 보기</span>
-                    </label>
-                  </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full py-4 px-6 rounded-xl shadow-lg hover:shadow-xl"
-                    disabled={isSubmitted}
-                  >
-                    <Send className="mr-2 h-5 w-5" />
-                    {isSubmitted ? "전송 중..." : "상담 신청하기"}
-                  </Button>
-                </form>
+                    <FormField
+                      control={form.control}
+                      name="agreed"
+                      render={({ field }) => (
+                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                          <FormControl>
+                            <Checkbox
+                              checked={field.value === 1}
+                              onCheckedChange={(checked) => field.onChange(checked ? 1 : 0)}
+                            />
+                          </FormControl>
+                          <div className="space-y-1 leading-none">
+                            <FormLabel className="text-sm text-gray-600">
+                              개인정보 수집 및 이용에 동의합니다. <span className="text-primary hover:underline cursor-pointer">자세히 보기</span>
+                            </FormLabel>
+                            <FormMessage />
+                          </div>
+                        </FormItem>
+                      )}
+                    />
+
+                    <Button 
+                      type="submit" 
+                      className="w-full py-4 px-6 rounded-xl shadow-lg hover:shadow-xl"
+                      disabled={contactMutation.isPending}
+                    >
+                      <Send className="mr-2 h-5 w-5" />
+                      {contactMutation.isPending ? "전송 중..." : "상담 신청하기"}
+                    </Button>
+                  </form>
+                </Form>
               </CardContent>
             </Card>
           </div>

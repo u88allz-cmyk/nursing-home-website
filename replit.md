@@ -107,17 +107,12 @@ A comprehensive healthcare management system built for a Korean nursing home (í•
 
 ## Changelog
 
-### June 26, 2025 - Netlify Deployment & Forms Complete
-- **Successfully deployed to Netlify with full functionality**
-- Converted contact form from backend API to Netlify Forms
-- Removed dependency on Express.js server for static hosting
-- Contact form submissions now handled by Netlify Forms system
-- Form submissions viewable in Netlify dashboard
-- Site fully functional at https://bespoke-alpaca-f24586.netlify.app/
-- All styling, navigation, and contact functionality working correctly
-- **Resolved Replit development environment CSS compilation issues**
-- Fixed Tailwind CSS configuration for both development and production
-- Created comprehensive contact form management guide
+### June 26, 2025 - Netlify Deployment Fixed
+- **Resolved Netlify deployment issues**
+- Fixed CSS loading problems by ensuring proper file structure
+- Updated netlify.toml to use pre-built static files from dist folder
+- Successfully deployed to https://bespoke-alpaca-f24586.netlify.app/
+- All styling and functionality now working correctly on live site
 
 ### June 25, 2025 - Project Completion
 - **Complete nursing home website implementation**
