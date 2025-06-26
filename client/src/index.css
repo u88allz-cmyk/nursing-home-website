@@ -50,11 +50,13 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply font-sans antialiased text-foreground;
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: rgb(var(--foreground));
     font-family: 'Inter', system-ui, sans-serif;
     background-color: rgb(var(--background));
   }
