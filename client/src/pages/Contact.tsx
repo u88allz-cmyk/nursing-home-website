@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Calendar, Mail, Ambulance, Send } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -34,31 +34,10 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "전화 상담",
-      content: "0507-1381-0016",
+      title: "대표전화",
+      content: "031-864-0011",
       subtitle: "평일 09:00 - 18:00",
-      href: "tel:0507-1381-0016"
-    },
-    {
-      icon: Mail,
-      title: "이메일 문의",
-      content: "haewadal@care.com",
-      subtitle: "24시간 접수 가능",
-      href: "mailto:haewadal@care.com"
-    },
-    {
-      icon: Calendar,
-      title: "방문 상담",
-      content: "사전 예약 필수",
-      subtitle: "평일 10:00 - 17:00",
-      href: "tel:0507-1381-0016"
-    },
-    {
-      icon: Ambulance,
-      title: "응급 상황",
-      content: "119 또는 응급실",
-      subtitle: "생명이 위급한 경우",
-      href: "tel:119"
+      href: "tel:031-864-0011"
     }
   ];
 
