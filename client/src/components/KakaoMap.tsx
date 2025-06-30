@@ -53,45 +53,44 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
 
             marker.setMap(map);
 
-            const infowindow = new window.kakao.maps.InfoWindow({
-              content: `
+            // CustomOverlay를 사용하여 완전한 스타일 제어
+            const content = `
+              <div style="
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                padding: 5px 8px;
+                font-size: 14px;
+                font-weight: bold;
+                color: #000;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                position: relative;
+                text-align: center;
+                white-space: nowrap;
+                width: fit-content;
+                display: inline-block;
+              ">
+                해와달요양원
                 <div style="
-                  padding: 6px 8px;
-                  font-size: 14px;
-                  color: #000;
-                  font-weight: bold;
-                  text-align: center;
-                  white-space: nowrap;
-                  width: auto !important;
-                  min-width: 0 !important;
-                  max-width: none !important;
-                  margin: 0;
-                  display: inline-block;
-                ">해와달요양원</div>
-              `
-            });
+                  position: absolute;
+                  bottom: -10px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 0;
+                  height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid white;
+                "></div>
+              </div>
+            `;
 
-            infowindow.open(map, marker);
-            
-            // InfoWindow의 DOM 요소에 직접 스타일 적용
-            setTimeout(() => {
-              const infoElements = document.querySelectorAll('.infowindow');
-              infoElements.forEach(element => {
-                const htmlElement = element as HTMLElement;
-                htmlElement.style.width = 'auto';
-                htmlElement.style.minWidth = '0';
-                htmlElement.style.maxWidth = 'none';
-              });
-              
-              // 내부 div 요소들도 조정
-              const innerDivs = document.querySelectorAll('.infowindow div');
-              innerDivs.forEach(div => {
-                const htmlDiv = div as HTMLElement;
-                htmlDiv.style.width = 'auto';
-                htmlDiv.style.minWidth = '0';
-                htmlDiv.style.maxWidth = 'none';
-              });
-            }, 200);
+            const customOverlay = new window.kakao.maps.CustomOverlay({
+              map: map,
+              position: coords,
+              content: content,
+              yAnchor: 1.2
+            });
             
           } else {
             // 검색 실패시 기본 위치 사용
@@ -110,45 +109,44 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
 
             marker.setMap(map);
 
-            const infowindow = new window.kakao.maps.InfoWindow({
-              content: `
+            // CustomOverlay를 사용하여 완전한 스타일 제어
+            const content = `
+              <div style="
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                padding: 5px 8px;
+                font-size: 14px;
+                font-weight: bold;
+                color: #000;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                position: relative;
+                text-align: center;
+                white-space: nowrap;
+                width: fit-content;
+                display: inline-block;
+              ">
+                해와달요양원
                 <div style="
-                  padding: 6px 8px;
-                  font-size: 14px;
-                  color: #000;
-                  font-weight: bold;
-                  text-align: center;
-                  white-space: nowrap;
-                  width: auto !important;
-                  min-width: 0 !important;
-                  max-width: none !important;
-                  margin: 0;
-                  display: inline-block;
-                ">해와달요양원</div>
-              `
-            });
+                  position: absolute;
+                  bottom: -10px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 0;
+                  height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid white;
+                "></div>
+              </div>
+            `;
 
-            infowindow.open(map, marker);
-            
-            // InfoWindow의 DOM 요소에 직접 스타일 적용
-            setTimeout(() => {
-              const infoElements = document.querySelectorAll('.infowindow');
-              infoElements.forEach(element => {
-                const htmlElement = element as HTMLElement;
-                htmlElement.style.width = 'auto';
-                htmlElement.style.minWidth = '0';
-                htmlElement.style.maxWidth = 'none';
-              });
-              
-              // 내부 div 요소들도 조정
-              const innerDivs = document.querySelectorAll('.infowindow div');
-              innerDivs.forEach(div => {
-                const htmlDiv = div as HTMLElement;
-                htmlDiv.style.width = 'auto';
-                htmlDiv.style.minWidth = '0';
-                htmlDiv.style.maxWidth = 'none';
-              });
-            }, 200);
+            const customOverlay = new window.kakao.maps.CustomOverlay({
+              map: map,
+              position: coords,
+              content: content,
+              yAnchor: 1.2
+            });
           }
         });
       } catch (error) {
