@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, TrainFront, Bus, Car, ExternalLink } from "lucide-react";
+import { MapPin, TrainFront, Bus, Car } from "lucide-react";
+import KakaoMap from "@/components/KakaoMap";
 
 const Location = () => {
 
@@ -55,23 +56,8 @@ const Location = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-sm h-96 lg:h-full min-h-[400px]">
                 <CardContent className="p-4 h-full">
-                  <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                    <iframe
-                      src="https://map.naver.com/p/entry/place/35235382?c=15.00,0,0,0,dh"
-                      className="w-full h-full border-0 rounded-2xl"
-                      style={{ minHeight: '350px' }}
-                      title="해와달 요양원 네이버 지도"
-                      loading="lazy"
-                    />
-                    <a
-                      href="https://map.naver.com/p/entry/place/35235382"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-4 bg-white/90 hover:bg-white p-2 rounded-lg shadow-md transition-all duration-200 flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-primary"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      크게 보기
-                    </a>
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    <KakaoMap className="w-full h-full" />
                   </div>
                 </CardContent>
               </Card>
