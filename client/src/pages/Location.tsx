@@ -57,10 +57,15 @@ const Location = () => {
               <Card className="shadow-sm h-96 lg:h-full min-h-[400px]">
                 <CardContent className="p-4 h-full">
                   <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                    <KakaoMap className="w-full h-full" />
-                    {/* 임시로 네이버 지도도 표시 */}
+                    <iframe
+                      src="https://map.naver.com/p/entry/place/35235382?c=15.00,0,0,0,dh"
+                      className="w-full h-full border-0 rounded-2xl"
+                      style={{ minHeight: '350px' }}
+                      title="해와달 요양원 네이버 지도"
+                      loading="lazy"
+                    />
                     <div className="absolute bottom-4 right-4 bg-white/90 p-2 rounded-lg shadow-md text-xs text-gray-600">
-                      카카오 지도 설정 중...
+                      카카오 지도 설정 중... (임시로 네이버 지도 표시)
                     </div>
                   </div>
                 </CardContent>
