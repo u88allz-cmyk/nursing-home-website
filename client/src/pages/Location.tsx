@@ -56,8 +56,19 @@ const Location = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-sm h-96 lg:h-full min-h-[400px]">
                 <CardContent className="p-4 h-full">
-                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                  <div className="w-full h-full rounded-2xl overflow-hidden relative">
                     <KakaoMap className="w-full h-full" />
+                    <div className="absolute bottom-4 right-4">
+                      <a
+                        href="https://map.naver.com/p/entry/place/35235382"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/90 hover:bg-white p-2 rounded-lg shadow-md transition-all duration-200 flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-primary"
+                      >
+                        <MapPin className="h-4 w-4" />
+                        네이버 지도에서 보기
+                      </a>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

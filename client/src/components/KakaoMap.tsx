@@ -24,6 +24,14 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       return;
     }
 
+    // 10초 후 타임아웃
+    const timeout = setTimeout(() => {
+      if (isLoading) {
+        setError('지도 로딩 시간이 초과되었습니다.');
+        setIsLoading(false);
+      }
+    }, 10000);
+
     const initializeMap = () => {
       try {
         if (!mapContainer.current) return;
@@ -51,10 +59,12 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
         // 마커에 인포윈도우 표시
         infowindow.open(map, marker);
         
+        clearTimeout(timeout);
         setIsLoading(false);
         setError(null);
       } catch (err) {
         console.error('지도 초기화 오류:', err);
+        clearTimeout(timeout);
         setError('지도를 불러오는 중 오류가 발생했습니다.');
         setIsLoading(false);
       }
@@ -62,10 +72,10 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
 
     // 이미 로드된 경우 바로 지도 생성
     if (window.kakao?.maps) {
-      window.kakao.maps.load(() => {
-        initializeMap();
-      });
-      return;
+      setTimeout(() => {
+        window.kakao.maps.load(initializeMap);
+      }, 100);
+      return () => clearTimeout(timeout);
     }
 
     const script = document.createElement('script');
@@ -73,17 +83,19 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
     
     script.onload = () => {
-      if (window.kakao?.maps) {
-        window.kakao.maps.load(() => {
-          initializeMap();
-        });
-      } else {
-        setError('카카오 지도 API 로드에 실패했습니다. 개발자 센터에서 지도 서비스 권한을 확인해주세요.');
-        setIsLoading(false);
-      }
+      setTimeout(() => {
+        if (window.kakao?.maps) {
+          window.kakao.maps.load(initializeMap);
+        } else {
+          clearTimeout(timeout);
+          setError('카카오 지도 API 로드에 실패했습니다.');
+          setIsLoading(false);
+        }
+      }, 100);
     };
 
     script.onerror = () => {
+      clearTimeout(timeout);
       setError('카카오 지도 스크립트 로드에 실패했습니다.');
       setIsLoading(false);
     };
@@ -91,12 +103,9 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     document.head.appendChild(script);
 
     return () => {
-      const existingScript = document.querySelector(`script[src*="dapi.kakao.com"]`);
-      if (existingScript && document.head.contains(existingScript)) {
-        document.head.removeChild(existingScript);
-      }
+      clearTimeout(timeout);
     };
-  }, []);
+  }, [isLoading]);
 
   if (error) {
     return (
