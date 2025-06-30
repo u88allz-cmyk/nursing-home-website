@@ -1,0 +1,8 @@
+# Static files should be served directly
+/naver67ca0cb406f02c34dba7365caaf48733.html /naver67ca0cb406f02c34dba7365caaf48733.html 200!
+/naver67ca0cb406f02c34dba7365caaf48733 /naver67ca0cb406f02c34dba7365caaf48733 200!
+/robots.txt /robots.txt 200!
+/sitemap.xml /sitemap.xml 200!
+
+# SPA fallback - must be last
+/*    /index.html   200
