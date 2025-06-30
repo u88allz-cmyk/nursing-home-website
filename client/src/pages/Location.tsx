@@ -56,30 +56,8 @@ const Location = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-sm h-96 lg:h-full min-h-[400px]">
                 <CardContent className="p-4 h-full">
-                  <div className="w-full h-full rounded-2xl overflow-hidden relative bg-gray-50">
-                    <iframe
-                      src="https://map.naver.com/p/entry/place/35235382?c=15.00,0,0,0,dh"
-                      className="w-full h-full border-0 rounded-2xl"
-                      style={{ minHeight: '350px' }}
-                      title="해와달 요양원 네이버 지도"
-                      loading="lazy"
-                      allowFullScreen
-                    />
-                    <div className="absolute top-4 right-4 bg-white/90 hover:bg-white p-2 rounded-lg shadow-md transition-all duration-200">
-                      <a
-                        href="https://map.naver.com/p/entry/place/35235382"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-primary"
-                      >
-                        <MapPin className="h-4 w-4" />
-                        크게 보기
-                      </a>
-                    </div>
-                    <div className="absolute bottom-4 left-4 bg-white/95 p-3 rounded-lg shadow-md">
-                      <p className="text-sm font-medium text-gray-800">해와달요양원</p>
-                      <p className="text-xs text-gray-600">경기 양주시 평화로 1426</p>
-                    </div>
+                  <div className="w-full h-full rounded-2xl overflow-hidden relative">
+                    <KakaoMap className="w-full h-full" />
                   </div>
                 </CardContent>
               </Card>
