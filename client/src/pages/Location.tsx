@@ -8,7 +8,7 @@ const Location = () => {
     {
       icon: MapPin,
       title: "요양원 주소",
-      content: "경기 양주시 덕계동 420-9",
+      content: "경기 양주시 평화로 1426",
       color: "primary"
     },
     {

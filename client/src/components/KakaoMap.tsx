@@ -25,8 +25,8 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       if (!mapContainer.current) return;
 
       try {
-        // 양주시 덕계동 420-9의 정확한 좌표 (카카오맵에서 확인)
-        const coords = new window.kakao.maps.LatLng(37.7891, 127.0505);
+        // 경기 양주시 평화로 1426의 정확한 좌표
+        const coords = new window.kakao.maps.LatLng(37.7847, 127.0436);
 
         const options = {
           center: coords,
@@ -42,7 +42,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
         marker.setMap(map);
 
         const infowindow = new window.kakao.maps.InfoWindow({
-          content: '<div style="padding:10px;font-size:14px;color:#000;font-weight:bold;">해와달요양원<br/>경기 양주시 덕계동 420-9</div>'
+          content: '<div style="padding:10px;font-size:14px;color:#000;font-weight:bold;">해와달요양원<br/>경기 양주시 평화로 1426</div>'
         });
 
         infowindow.open(map, marker);
