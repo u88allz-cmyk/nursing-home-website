@@ -57,7 +57,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
             const content = `
               <div style="
                 background: white;
-                border: 1px solid #007BFF;
+                border: 1px solid #DC3545;
                 border-radius: 6px;
                 padding: 5px 8px;
                 font-size: 14px;
@@ -80,7 +80,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
                   height: 0;
                   border-left: 10px solid transparent;
                   border-right: 10px solid transparent;
-                  border-top: 10px solid #007BFF;
+                  border-top: 10px solid #DC3545;
                 "></div>
               </div>
             `;
@@ -113,7 +113,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
             const content = `
               <div style="
                 background: white;
-                border: 1px solid #007BFF;
+                border: 1px solid #DC3545;
                 border-radius: 6px;
                 padding: 5px 8px;
                 font-size: 14px;
@@ -136,7 +136,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
                   height: 0;
                   border-left: 10px solid transparent;
                   border-right: 10px solid transparent;
-                  border-top: 10px solid #007BFF;
+                  border-top: 10px solid #DC3545;
                 "></div>
               </div>
             `;
