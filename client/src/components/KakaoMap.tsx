@@ -48,7 +48,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
             marker.setMap(map);
 
             const infowindow = new window.kakao.maps.InfoWindow({
-              content: '<div style="padding:5px 8px;font-size:14px;color:#000;font-weight:bold;">해와달요양원</div>'
+              content: '<div style="padding:2px 6px;font-size:13px;color:#000;font-weight:bold;white-space:nowrap;">해와달요양원</div>'
             });
 
             infowindow.open(map, marker);
@@ -70,7 +70,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
             marker.setMap(map);
 
             const infowindow = new window.kakao.maps.InfoWindow({
-              content: '<div style="padding:5px 8px;font-size:14px;color:#000;font-weight:bold;">해와달요양원</div>'
+              content: '<div style="padding:2px 6px;font-size:13px;color:#000;font-weight:bold;white-space:nowrap;">해와달요양원</div>'
             });
 
             infowindow.open(map, marker);
