@@ -56,8 +56,12 @@ const Location = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-sm h-96 lg:h-full min-h-[400px]">
                 <CardContent className="p-4 h-full">
-                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                  <div className="w-full h-full rounded-2xl overflow-hidden relative">
                     <KakaoMap className="w-full h-full" />
+                    {/* 임시로 네이버 지도도 표시 */}
+                    <div className="absolute bottom-4 right-4 bg-white/90 p-2 rounded-lg shadow-md text-xs text-gray-600">
+                      카카오 지도 설정 중...
+                    </div>
                   </div>
                 </CardContent>
               </Card>
