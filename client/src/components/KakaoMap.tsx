@@ -16,8 +16,12 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
   useEffect(() => {
     const apiKey = import.meta.env.VITE_KAKAO_MAP_API_KEY;
     
+    console.log('카카오 지도 초기화 시작');
+    console.log('API 키 존재 여부:', !!apiKey);
+    console.log('현재 도메인:', window.location.hostname);
+    
     if (!apiKey) {
-      console.error('카카오 지도 API 키가 없습니다.');
+      console.error('카카오 지도 API 키가 없습니다. 환경 변수를 확인하세요.');
       return;
     }
 

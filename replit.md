@@ -107,6 +107,17 @@ A comprehensive healthcare management system built for a Korean nursing home (�
 
 ## Changelog
 
+### June 30, 2025 - Kakao Maps Integration & SEO Setup
+- **Kakao Maps API integration with keyword search functionality**
+- Successfully implemented location display using "해와달 요양원 양주" search
+- Fixed InfoWindow styling to show only facility name
+- Added debugging logs for troubleshooting deployment issues
+- **Naver Search Advisor HTML verification file uploaded**
+- SEO optimization preparation with naver67ca0cb406f02c34dba7365caaf48733.html
+- **Environment variable setup required for Netlify deployment**
+- VITE_KAKAO_MAP_API_KEY must be configured in Netlify dashboard
+- Address updated to "경기 양주시 평화로 1426 (6,7층)"
+
 ### June 26, 2025 - Netlify Forms Integration Complete
 - **Successfully converted contact form to Netlify Forms**
 - Removed React Hook Form and backend API dependencies
