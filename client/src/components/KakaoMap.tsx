@@ -18,7 +18,9 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     
     console.log('카카오 지도 초기화 시작');
     console.log('API 키 존재 여부:', !!apiKey);
+    console.log('API 키 길이:', apiKey ? apiKey.length : 0);
     console.log('현재 도메인:', window.location.hostname);
+    console.log('환경변수 전체:', import.meta.env);
     
     if (!apiKey) {
       console.error('카카오 지도 API 키가 없습니다. 환경 변수를 확인하세요.');
@@ -154,17 +156,28 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       }
     };
 
+    // index.html에서 카카오 지도 스크립트가 로드되므로 바로 초기화
     if (window.kakao?.maps) {
-      window.kakao.maps.load(loadKakaoMap);
+      console.log('카카오 지도 SDK 로드 완료, 지도 초기화 시작');
+      loadKakaoMap();
     } else {
-      const script = document.createElement('script');
-      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&libraries=services&autoload=false`;
-      script.onload = () => {
+      console.log('카카오 지도 SDK 로딩 대기 중...');
+      // 스크립트 로딩 완료까지 잠시 대기
+      const checkKakao = setInterval(() => {
         if (window.kakao?.maps) {
-          window.kakao.maps.load(loadKakaoMap);
+          console.log('카카오 지도 SDK 로드 완료');
+          clearInterval(checkKakao);
+          loadKakaoMap();
         }
-      };
-      document.head.appendChild(script);
+      }, 100);
+      
+      // 10초 후에도 로드되지 않으면 타임아웃
+      setTimeout(() => {
+        clearInterval(checkKakao);
+        if (!window.kakao?.maps) {
+          console.error('카카오 지도 SDK 로드 타임아웃');
+        }
+      }, 10000);
     }
   }, []);
 
