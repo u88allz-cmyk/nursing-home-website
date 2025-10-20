@@ -25,7 +25,7 @@ const Header = () => {
               alt="바른나무요양원 로고" 
               className="h-[70px] w-auto object-contain"
             />
-            <h1 className="hidden sm:block ml-4 text-2xl font-semibold" style={{ color: '#C69C6D', fontFamily: 'ChosunilboMyeongjo, serif' }}>
+            <h1 className="hidden sm:block ml-4 text-2xl font-bold" style={{ color: '#67BA6D', fontFamily: 'Pretendard, -apple-system, sans-serif' }}>
               바른나무요양원
             </h1>
           </Link>
