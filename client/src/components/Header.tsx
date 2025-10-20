@@ -34,9 +34,9 @@ const Header = () => {
           <nav className="flex space-x-3 sm:space-x-8 lg:space-x-12">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <span className={`text-sm sm:text-base lg:text-lg font-medium transition-colors duration-200 hover:text-primary whitespace-nowrap ${
-                  isActiveLink(item.href) ? "text-primary" : "text-muted-foreground"
-                }`}>
+                <span className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-200 whitespace-nowrap ${
+                  isActiveLink(item.href) ? "opacity-100" : "opacity-70"
+                }`} style={{ color: '#67BA6D', fontFamily: 'Pretendard, -apple-system, sans-serif' }}>
                   {item.label}
                 </span>
               </Link>
