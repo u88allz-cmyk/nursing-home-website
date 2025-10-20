@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import logoImg from "@assets/바른나무요양원 로고_1760948417947.png";
+import logoImg from "@assets/바른나무요양원 로고-Photoroom_1760948721948.png";
 
 const Header = () => {
   const [location] = useLocation();
