@@ -3,10 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Hospital, Stethoscope, Calendar, Info } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
+import hero1 from "@/assets/hero1.jpg";
 
 const Home = () => {
   return (
     <div className="animate-fade-in">
+      {/* Test Image */}
+      <div className="w-full h-96 bg-red-500">
+        <img src={hero1} alt="Test" className="w-full h-full object-cover" />
+      </div>
+      
       {/* Hero Slider Section */}
       <HeroSlider />
       
