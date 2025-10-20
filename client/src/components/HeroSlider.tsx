@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import hero1 from "@assets/다운로드 (1)_1760949089499.jpg";
-import hero2 from "@assets/다운로드_1760949089500.jpg";
+import hero1 from "@assets/다운로드 (1)_1760949485571.jpg";
+import hero2 from "@assets/다운로드 (2)_1760949485572.jpg";
 import hero3 from "@assets/다운로드_1760949089501.png";
 
 const HeroSlider = () => {
