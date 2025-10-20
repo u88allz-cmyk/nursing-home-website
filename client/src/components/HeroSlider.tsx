@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import hero1 from "@assets/다운로드_1760949790804.jpg";
-import hero2 from "@assets/다운로드 (1)_1760949796747.jpg";
-import hero3 from "@assets/다운로드 (2)_1760949800696.jpg";
+import hero1 from "@assets/hero-1.jpg";
+import hero2 from "@assets/hero-2.jpg";
+import hero3 from "@assets/hero-3.jpg";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
