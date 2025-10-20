@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+import hero1 from "@/assets/hero1.jpg";
+import hero2 from "@/assets/hero2.jpg";
+import hero3 from "@/assets/hero3.jpg";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,11 +47,11 @@ const HeroSlider = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${slide.image})`,
-              filter: 'brightness(1.15) contrast(0.95)',
+              filter: 'brightness(1.1) contrast(1.05)',
             }}
           />
-          <div className="absolute inset-0 bg-white/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/30" />
+          <div className="absolute inset-0 bg-white/15" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
           
           <div className="relative h-full flex items-center justify-center">
             <div className="text-center px-4 max-w-4xl mx-auto">
