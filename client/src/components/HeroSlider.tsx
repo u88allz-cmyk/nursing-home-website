@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import hero1 from "@/assets/hero1.jpg";
-import hero2 from "@/assets/hero2.jpg";
-import hero3 from "@/assets/hero3.jpg";
+import hero1 from "@assets/다운로드 (1)_1760949089499.jpg";
+import hero2 from "@assets/다운로드_1760949089500.jpg";
+import hero3 from "@assets/다운로드_1760949089501.png";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,16 +47,17 @@ const HeroSlider = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${slide.image})`,
+              filter: 'brightness(1.15) contrast(0.95)',
             }}
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-white/40" />
           
           <div className="relative h-full flex items-center justify-center">
             <div className="text-center px-4 max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-4 text-yellow-300 drop-shadow-xl" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)' }}>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-xl" style={{ color: '#67BA6D', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
                 {slide.title}
               </h2>
-              <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white max-w-2xl mx-auto leading-relaxed drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+              <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-semibold" style={{ color: '#2d2d2d', textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}>
                 {slide.subtitle}
               </p>
               
@@ -64,7 +65,8 @@ const HeroSlider = () => {
                 <Link href="/contact">
                   <Button 
                     size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
+                    className="text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold"
+                    style={{ backgroundColor: '#67BA6D' }}
                   >
                     상담 문의
                   </Button>
@@ -73,7 +75,8 @@ const HeroSlider = () => {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg backdrop-blur-sm"
+                    className="border-2 bg-white text-gray-900 hover:bg-gray-50 px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold"
+                    style={{ borderColor: '#67BA6D' }}
                   >
                     요양원 소개
                   </Button>
@@ -92,9 +95,10 @@ const HeroSlider = () => {
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentSlide 
-                ? "bg-white scale-110" 
-                : "bg-white/50 hover:bg-white/70"
+                ? "scale-110" 
+                : "opacity-50 hover:opacity-70"
             }`}
+            style={{ backgroundColor: '#67BA6D' }}
           />
         ))}
       </div>
