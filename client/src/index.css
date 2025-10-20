@@ -1,74 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 250, 245, 239;
-  --foreground: 70, 49, 28;
-  --muted: 248, 240, 230;
-  --muted-foreground: 166, 124, 82;
-  --popover: 250, 245, 239;
-  --popover-foreground: 70, 49, 28;
+  --background: 255, 255, 255;
+  --foreground: 30, 30, 30;
+  --muted: 247, 250, 252;
+  --muted-foreground: 100, 116, 139;
+  --popover: 255, 255, 255;
+  --popover-foreground: 30, 30, 30;
   --card: 255, 255, 255;
-  --card-foreground: 70, 49, 28;
-  --border: 232, 220, 200;
-  --input: 232, 220, 200;
-  --primary: 198, 156, 109;
+  --card-foreground: 30, 30, 30;
+  --border: 226, 232, 240;
+  --input: 226, 232, 240;
+  --primary: 103, 186, 109;
   --primary-foreground: 255, 255, 255;
-  --secondary: 226, 200, 154;
-  --secondary-foreground: 70, 49, 28;
-  --accent: 166, 124, 82;
-  --accent-foreground: 255, 255, 255;
-  --destructive: 220, 38, 38;
-  --destructive-foreground: 254, 242, 242;
-  --ring: 198, 156, 109;
-  --radius: 0.5rem;
+  --secondary: 240, 253, 244;
+  --secondary-foreground: 22, 101, 52;
+  --accent: 134, 239, 172;
+  --accent-foreground: 22, 101, 52;
+  --destructive: 239, 68, 68;
+  --destructive-foreground: 255, 255, 255;
+  --ring: 103, 186, 109;
+  --radius: 1rem;
 }
 
 .dark {
-  --background: 70, 49, 28;
-  --foreground: 250, 245, 239;
-  --muted: 90, 70, 50;
-  --muted-foreground: 198, 156, 109;
-  --popover: 70, 49, 28;
-  --popover-foreground: 250, 245, 239;
-  --card: 90, 70, 50;
-  --card-foreground: 250, 245, 239;
-  --border: 110, 85, 60;
-  --input: 110, 85, 60;
-  --primary: 198, 156, 109;
+  --background: 15, 23, 42;
+  --foreground: 248, 250, 252;
+  --muted: 30, 41, 59;
+  --muted-foreground: 148, 163, 184;
+  --popover: 15, 23, 42;
+  --popover-foreground: 248, 250, 252;
+  --card: 30, 41, 59;
+  --card-foreground: 248, 250, 252;
+  --border: 51, 65, 85;
+  --input: 51, 65, 85;
+  --primary: 103, 186, 109;
   --primary-foreground: 255, 255, 255;
-  --secondary: 226, 200, 154;
-  --secondary-foreground: 70, 49, 28;
-  --accent: 166, 124, 82;
-  --accent-foreground: 255, 255, 255;
+  --secondary: 22, 101, 52;
+  --secondary-foreground: 240, 253, 244;
+  --accent: 134, 239, 172;
+  --accent-foreground: 22, 101, 52;
   --destructive: 239, 68, 68;
-  --destructive-foreground: 254, 242, 242;
-  --ring: 198, 156, 109;
-  --radius: 0.5rem;
+  --destructive-foreground: 255, 255, 255;
+  --ring: 103, 186, 109;
 }
 
 @layer base {
   * {
-    border-color: hsl(var(--border));
+    @apply border-border;
   }
 
   body {
-    font-family: system-ui, -apple-system, sans-serif;
+    @apply bg-white text-gray-900;
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
-    color: rgb(var(--foreground));
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: rgb(var(--background));
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
   }
   
   .animate-slide-up {
-    animation: slideUp 0.3s ease-out;
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .premium-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  }
+
+  .green-gradient {
+    background: linear-gradient(135deg, #67BA6D 0%, #86efac 100%);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
 
@@ -83,11 +112,35 @@
 
 @keyframes slideUp {
   from { 
-    transform: translateY(20px); 
+    transform: translateY(30px); 
     opacity: 0; 
   }
   to { 
     transform: translateY(0); 
     opacity: 1; 
   }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scale(0.95); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 60px -10px rgba(103, 186, 109, 0.15),
+              0 10px 30px -5px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(103, 186, 109, 0.2);
 }
