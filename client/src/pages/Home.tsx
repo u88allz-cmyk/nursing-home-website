@@ -114,19 +114,29 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Philosophy Section */}
+      {/* Long-term Care Grade Application Section */}
       <section className="py-16 bg-gradient-to-b from-white to-green-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#67BA6D' }}>
-              바른나무요양원의 운영철학
+            <Award className="h-16 w-16 mx-auto mb-6" style={{ color: '#67BA6D' }} />
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8" style={{ color: '#67BA6D' }}>
+              장기요양등급, 어떻게 신청하나요?
             </h2>
-            <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#67BA6D' }}></div>
-            <p className="text-2xl lg:text-3xl text-gray-800 font-semibold leading-relaxed max-w-4xl mx-auto">
-              바른 마음, 바른 태도, 바른 정성으로<br />
-              우리 부모님을 건강하고 편안하게<br />
-              안전하고 행복하게 모십니다
+            <p className="text-2xl lg:text-3xl text-gray-800 font-semibold leading-relaxed max-w-4xl mx-auto mb-8">
+              처음이라 어렵고 막막하신가요?<br />
+              바른나무요양원이 처음부터 끝까지 친절하게 안내해드립니다
             </p>
+            <a href="tel:0507-1381-0016">
+              <Button 
+                size="lg" 
+                className="text-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl font-bold"
+                style={{ backgroundColor: '#67BA6D' }}
+                data-testid="button-call-care-grade"
+              >
+                <Phone className="mr-2 h-6 w-6" />
+                0507-1381-0016
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -188,32 +198,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Award className="h-16 w-16 mx-auto mb-6" style={{ color: '#67BA6D' }} />
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: '#67BA6D' }}>
-            장기요양등급, 어떻게 신청하나요?
-          </h2>
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            처음이라 어렵고 막막하신가요?<br />
-            바른나무요양원이 처음부터 끝까지 친절하게 안내해드립니다
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:0507-1381-0016">
-              <Button 
-                size="lg" 
-                className="text-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-xl font-bold"
-                style={{ backgroundColor: '#67BA6D' }}
-                data-testid="button-call-cta"
-              >
-                <Phone className="mr-2 h-6 w-6" />
-                0507-1381-0016
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
