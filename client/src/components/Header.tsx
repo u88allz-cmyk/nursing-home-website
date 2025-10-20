@@ -22,11 +22,11 @@ const Header = () => {
           <Link href="/" className="flex-shrink-0 flex items-center">
             <img 
               src={logoImg} 
-              alt="해와달 요양원 로고" 
+              alt="바른나무요양원 로고" 
               className="h-[70px] w-auto object-contain"
             />
             <h1 className="hidden sm:block ml-4 text-2xl font-semibold" style={{ color: '#C69C6D', fontFamily: 'ChosunilboMyeongjo, serif' }}>
-              해와달 요양원
+              바른나무요양원
             </h1>
           </Link>
           
