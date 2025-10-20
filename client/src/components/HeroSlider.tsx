@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import hero1 from "@assets/다운로드 (1)_1760949485571.jpg";
 import hero2 from "@assets/다운로드 (2)_1760949485572.jpg";
-import hero3 from "@assets/다운로드_1760949089501.png";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,11 +17,6 @@ const HeroSlider = () => {
       image: hero2,
       title: "안전하고 쾌적한 환경",
       subtitle: "집처럼 편안한 요양원에서의 생활"
-    },
-    {
-      image: hero3,
-      title: "가족같은 따뜻한 돌봄",
-      subtitle: "개별 맞춤 케어로 행복한 일상을"
     }
   ];
 
