@@ -1,20 +1,116 @@
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Hospital, Stethoscope, Calendar, Info } from "lucide-react";
-import HeroSlider from "@/components/HeroSlider";
 import hero1 from "@/assets/hero1.jpg";
+import hero2 from "@/assets/hero2.jpg";
+import hero3 from "@/assets/hero3.jpg";
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      image: hero1,
+      title: "따뜻한 보살핌과 전문 케어",
+      subtitle: "어르신들의 건강하고 행복한 노후를 위해"
+    },
+    {
+      image: hero2,
+      title: "안전하고 쾌적한 환경",
+      subtitle: "집처럼 편안한 요양원에서의 생활"
+    },
+    {
+      image: hero3,
+      title: "가족같은 따뜻한 돌봄",
+      subtitle: "개별 맞춤 케어로 행복한 일상을"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="animate-fade-in">
-      {/* Test Image */}
-      <div className="w-full h-96 bg-red-500">
-        <img src={hero1} alt="Test" className="w-full h-full object-cover" />
-      </div>
-      
       {/* Hero Slider Section */}
-      <HeroSlider />
+      <div className="relative w-full h-96 overflow-hidden">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img 
+              src={slide.image} 
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-white/15" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
+            
+            <div className="relative h-full flex items-center justify-center">
+              <div className="text-center px-4 max-w-4xl mx-auto">
+                <h2 
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-xl" 
+                  style={{ color: '#67BA6D', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}
+                >
+                  {slide.title}
+                </h2>
+                <p 
+                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-semibold" 
+                  style={{ color: '#2d2d2d', textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}
+                >
+                  {slide.subtitle}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/contact">
+                    <Button 
+                      size="lg" 
+                      className="text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold"
+                      style={{ backgroundColor: '#67BA6D' }}
+                      data-testid="button-contact-hero"
+                    >
+                      상담 문의
+                    </Button>
+                  </Link>
+                  <Link href="/about">
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold"
+                      style={{ borderColor: '#67BA6D', color: '#67BA6D' }}
+                      data-testid="button-about-hero"
+                    >
+                      요양원 소개
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+              data-testid={`slider-indicator-${index}`}
+            />
+          ))}
+        </div>
+      </div>
       
       {/* Original Hero Section - now hidden */}
       <section className="relative bg-muted py-20 lg:py-32 hidden">
