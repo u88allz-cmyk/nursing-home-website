@@ -121,11 +121,11 @@ const Home = () => {
       }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Award className="h-20 w-20 mx-auto mb-8 text-white" style={{
+            <Award className="h-16 w-16 mx-auto mb-6 text-white" style={{
               filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.4))'
             }} />
             <h2 
-              className="text-5xl lg:text-6xl mb-10 text-white"
+              className="text-3xl lg:text-4xl mb-8 text-white"
               style={{ 
                 fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                 fontWeight: 700,
@@ -144,7 +144,7 @@ const Home = () => {
               장기요양등급, 어떻게 신청하나요?
             </h2>
             <p 
-              className="text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto mb-10"
+              className="text-xl lg:text-2xl text-white leading-relaxed max-w-3xl mx-auto mb-12"
               style={{ 
                 fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                 fontWeight: 500,
@@ -157,7 +157,8 @@ const Home = () => {
                   1px 1px 0 rgba(0,0,0,0.2),
                   2px 2px 8px rgba(0,0,0,0.4)
                 `,
-                WebkitTextStroke: '0.8px rgba(0,0,0,0.1)'
+                WebkitTextStroke: '0.8px rgba(0,0,0,0.1)',
+                lineHeight: '1.8'
               }}
             >
               처음이라 어렵고 막막하신가요?<br />
@@ -167,17 +168,21 @@ const Home = () => {
               <a href="tel:0507-1381-0016">
                 <Button 
                   size="lg" 
-                  className="bg-white px-16 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border-2"
+                  className="bg-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border-2"
                   style={{ 
                     color: '#4A9B5C',
                     borderColor: 'rgba(255,255,255,0.5)',
                     fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                     fontWeight: 700,
                     letterSpacing: '0.5px',
-                    fontSize: '1.75rem',
+                    fontSize: '1.5rem',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    paddingLeft: '4rem',
+                    paddingRight: '4rem',
+                    paddingTop: '1rem',
+                    paddingBottom: '1rem'
                   }}
                   data-testid="button-call-care-grade"
                 >
