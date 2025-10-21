@@ -163,22 +163,28 @@ const Home = () => {
               처음이라 어렵고 막막하신가요?<br />
               바른나무요양원이 처음부터 끝까지 친절하게 안내해드립니다
             </p>
-            <a href="tel:0507-1381-0016">
-              <Button 
-                size="lg" 
-                className="bg-white px-12 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-2xl hover:scale-105 border-2 flex items-center justify-center"
-                style={{ 
-                  color: '#4A9B5C',
-                  borderColor: 'rgba(255,255,255,0.5)',
-                  fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
-                  fontWeight: 700,
-                  letterSpacing: '0.5px'
-                }}
-                data-testid="button-call-care-grade"
-              >
-                상담 연결
-              </Button>
-            </a>
+            <div className="flex justify-center">
+              <a href="tel:0507-1381-0016">
+                <Button 
+                  size="lg" 
+                  className="bg-white px-16 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border-2"
+                  style={{ 
+                    color: '#4A9B5C',
+                    borderColor: 'rgba(255,255,255,0.5)',
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontWeight: 700,
+                    letterSpacing: '0.5px',
+                    fontSize: '1.75rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                  data-testid="button-call-care-grade"
+                >
+                  상담 연결
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
