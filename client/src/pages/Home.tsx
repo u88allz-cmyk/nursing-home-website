@@ -118,19 +118,55 @@ const Home = () => {
       <section className="py-16" style={{ backgroundColor: '#E8F5E9' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Award className="h-16 w-16 mx-auto mb-6 text-white" />
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white">
+            <Award className="h-16 w-16 mx-auto mb-6 text-white" style={{
+              filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.3))'
+            }} />
+            <h2 
+              className="text-4xl lg:text-5xl mb-8 text-white"
+              style={{ 
+                fontFamily: 'Noto Sans KR, Pretendard, -apple-system, sans-serif',
+                fontWeight: 900,
+                textShadow: `
+                  3px 3px 0 rgba(0,0,0,0.3),
+                  -1px -1px 0 rgba(0,0,0,0.2),
+                  1px -1px 0 rgba(0,0,0,0.2),
+                  -1px 1px 0 rgba(0,0,0,0.2),
+                  1px 1px 0 rgba(0,0,0,0.2),
+                  2px 2px 8px rgba(0,0,0,0.4)
+                `,
+                WebkitTextStroke: '1px rgba(0,0,0,0.1)'
+              }}
+            >
               장기요양등급, 어떻게 신청하나요?
             </h2>
-            <p className="text-2xl lg:text-3xl text-white font-semibold leading-relaxed max-w-4xl mx-auto mb-8">
+            <p 
+              className="text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto mb-8"
+              style={{ 
+                fontFamily: 'Noto Sans KR, Pretendard, -apple-system, sans-serif',
+                fontWeight: 700,
+                textShadow: `
+                  2px 2px 0 rgba(0,0,0,0.25),
+                  -1px -1px 0 rgba(0,0,0,0.15),
+                  1px -1px 0 rgba(0,0,0,0.15),
+                  -1px 1px 0 rgba(0,0,0,0.15),
+                  1px 1px 0 rgba(0,0,0,0.15),
+                  2px 2px 6px rgba(0,0,0,0.3)
+                `,
+                WebkitTextStroke: '0.5px rgba(0,0,0,0.1)'
+              }}
+            >
               처음이라 어렵고 막막하신가요?<br />
               바른나무요양원이 처음부터 끝까지 친절하게 안내해드립니다
             </p>
             <a href="tel:0507-1381-0016">
               <Button 
                 size="lg" 
-                className="bg-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl font-bold hover:scale-105"
-                style={{ color: '#67BA6D' }}
+                className="bg-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl hover:scale-105"
+                style={{ 
+                  color: '#67BA6D',
+                  fontFamily: 'Noto Sans KR, Pretendard, -apple-system, sans-serif',
+                  fontWeight: 900
+                }}
                 data-testid="button-call-care-grade"
               >
                 <Phone className="mr-2 h-6 w-6" />
