@@ -115,17 +115,40 @@ const Home = () => {
       </div>
 
       {/* Long-term Care Grade Application Section */}
-      <section className="py-16" style={{ backgroundColor: '#E8F5E9' }}>
+      <section className="py-20" style={{ 
+        background: 'linear-gradient(135deg, #4A9B5C 0%, #67BA6D 50%, #4A9B5C 100%)',
+        boxShadow: 'inset 0 2px 20px rgba(0,0,0,0.1)'
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Award className="h-16 w-16 mx-auto mb-6 text-white" style={{
-              filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.3))'
+            <Award className="h-20 w-20 mx-auto mb-8 text-white" style={{
+              filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.4))'
             }} />
             <h2 
-              className="text-4xl lg:text-5xl mb-8 text-white"
+              className="text-5xl lg:text-6xl mb-10 text-white"
               style={{ 
-                fontFamily: 'Noto Sans KR, Pretendard, -apple-system, sans-serif',
-                fontWeight: 900,
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontWeight: 700,
+                letterSpacing: '-0.5px',
+                textShadow: `
+                  4px 4px 0 rgba(0,0,0,0.3),
+                  -2px -2px 0 rgba(0,0,0,0.2),
+                  2px -2px 0 rgba(0,0,0,0.2),
+                  -2px 2px 0 rgba(0,0,0,0.2),
+                  2px 2px 0 rgba(0,0,0,0.2),
+                  3px 3px 12px rgba(0,0,0,0.5)
+                `,
+                WebkitTextStroke: '1.5px rgba(0,0,0,0.15)'
+              }}
+            >
+              장기요양등급, 어떻게 신청하나요?
+            </h2>
+            <p 
+              className="text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto mb-10"
+              style={{ 
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontWeight: 500,
+                letterSpacing: '-0.3px',
                 textShadow: `
                   3px 3px 0 rgba(0,0,0,0.3),
                   -1px -1px 0 rgba(0,0,0,0.2),
@@ -134,25 +157,7 @@ const Home = () => {
                   1px 1px 0 rgba(0,0,0,0.2),
                   2px 2px 8px rgba(0,0,0,0.4)
                 `,
-                WebkitTextStroke: '1px rgba(0,0,0,0.1)'
-              }}
-            >
-              장기요양등급, 어떻게 신청하나요?
-            </h2>
-            <p 
-              className="text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto mb-8"
-              style={{ 
-                fontFamily: 'Noto Sans KR, Pretendard, -apple-system, sans-serif',
-                fontWeight: 700,
-                textShadow: `
-                  2px 2px 0 rgba(0,0,0,0.25),
-                  -1px -1px 0 rgba(0,0,0,0.15),
-                  1px -1px 0 rgba(0,0,0,0.15),
-                  -1px 1px 0 rgba(0,0,0,0.15),
-                  1px 1px 0 rgba(0,0,0,0.15),
-                  2px 2px 6px rgba(0,0,0,0.3)
-                `,
-                WebkitTextStroke: '0.5px rgba(0,0,0,0.1)'
+                WebkitTextStroke: '0.8px rgba(0,0,0,0.1)'
               }}
             >
               처음이라 어렵고 막막하신가요?<br />
@@ -161,16 +166,18 @@ const Home = () => {
             <a href="tel:0507-1381-0016">
               <Button 
                 size="lg" 
-                className="bg-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl hover:scale-105"
+                className="bg-white px-12 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-2xl hover:scale-105 border-2"
                 style={{ 
-                  color: '#67BA6D',
-                  fontFamily: 'Noto Sans KR, Pretendard, -apple-system, sans-serif',
-                  fontWeight: 900
+                  color: '#4A9B5C',
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                  fontWeight: 700,
+                  letterSpacing: '0.5px'
                 }}
                 data-testid="button-call-care-grade"
               >
-                <Phone className="mr-2 h-6 w-6" />
-                0507-1381-0016
+                <Phone className="mr-3 h-7 w-7" />
+                상담 연결
               </Button>
             </a>
           </div>
