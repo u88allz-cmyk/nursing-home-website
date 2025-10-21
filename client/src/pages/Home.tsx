@@ -166,7 +166,7 @@ const Home = () => {
             <a href="tel:0507-1381-0016">
               <Button 
                 size="lg" 
-                className="bg-white px-12 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-2xl hover:scale-105 border-2"
+                className="bg-white px-12 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-2xl hover:scale-105 border-2 flex items-center justify-center"
                 style={{ 
                   color: '#4A9B5C',
                   borderColor: 'rgba(255,255,255,0.5)',
@@ -176,7 +176,6 @@ const Home = () => {
                 }}
                 data-testid="button-call-care-grade"
               >
-                <Phone className="mr-3 h-7 w-7" />
                 상담 연결
               </Button>
             </a>
