@@ -144,7 +144,7 @@ const Home = () => {
               장기요양등급, 어떻게 신청하나요?
             </h2>
             <p 
-              className="text-xl lg:text-2xl text-white leading-relaxed max-w-3xl mx-auto mb-12"
+              className="text-xl lg:text-2xl text-white leading-relaxed max-w-3xl mx-auto mb-16"
               style={{ 
                 fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                 fontWeight: 500,
