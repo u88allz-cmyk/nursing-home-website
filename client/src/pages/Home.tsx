@@ -46,28 +46,6 @@ const Home = () => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img 
-              src={slide.image} 
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-white/15" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
-            
-            <div className="relative h-full flex items-center justify-center">
-              <div className="text-center px-4 max-w-4xl mx-auto">
-                <h2 
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-xl" 
-                  style={{ color: '#67BA6D', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}
-                >
-                  {slide.title}
-                </h2>
-                <p 
-                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-semibold" 
-                  style={{ color: '#2d2d2d', textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}
-                >
-                  {slide.subtitle}
-                </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="tel:0507-1381-0016">
