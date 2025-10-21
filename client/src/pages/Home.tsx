@@ -115,22 +115,22 @@ const Home = () => {
       </div>
 
       {/* Long-term Care Grade Application Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-16" style={{ backgroundColor: '#E8F5E9' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Award className="h-16 w-16 mx-auto mb-6" style={{ color: '#67BA6D' }} />
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8" style={{ color: '#67BA6D' }}>
+            <Award className="h-16 w-16 mx-auto mb-6 text-white" />
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white">
               장기요양등급, 어떻게 신청하나요?
             </h2>
-            <p className="text-2xl lg:text-3xl text-gray-800 font-semibold leading-relaxed max-w-4xl mx-auto mb-8">
+            <p className="text-2xl lg:text-3xl text-white font-semibold leading-relaxed max-w-4xl mx-auto mb-8">
               처음이라 어렵고 막막하신가요?<br />
               바른나무요양원이 처음부터 끝까지 친절하게 안내해드립니다
             </p>
             <a href="tel:0507-1381-0016">
               <Button 
                 size="lg" 
-                className="text-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl font-bold"
-                style={{ backgroundColor: '#67BA6D' }}
+                className="bg-white px-10 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl font-bold hover:scale-105"
+                style={{ color: '#67BA6D' }}
                 data-testid="button-call-care-grade"
               >
                 <Phone className="mr-2 h-6 w-6" />
