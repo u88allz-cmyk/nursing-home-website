@@ -1,11 +1,18 @@
+import logoImg from '@assets/바른나무요양원 로고-Photoroom_1761117376641.png';
+
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-6">
-          <h3 className="text-2xl font-bold" style={{ color: '#67BA6D' }}>
-            바른나무요양원
-          </h3>
+          <div className="flex justify-center">
+            <img 
+              src={logoImg} 
+              alt="바른나무요양원 로고" 
+              className="h-24 w-auto"
+              style={{ filter: 'brightness(1.1)' }}
+            />
+          </div>
           
           <div className="space-y-3 text-base">
             <p className="text-gray-300">
