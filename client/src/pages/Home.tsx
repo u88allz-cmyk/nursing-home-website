@@ -115,17 +115,17 @@ const Home = () => {
       </div>
 
       {/* Long-term Care Grade Application Section */}
-      <section className="py-20" style={{ 
-        background: 'linear-gradient(135deg, #4A9B5C 0%, #67BA6D 50%, #4A9B5C 100%)',
+      <section className="py-12" style={{ 
+        background: 'linear-gradient(135deg, #7BC886 0%, #8ED497 50%, #7BC886 100%)',
         boxShadow: 'inset 0 2px 20px rgba(0,0,0,0.1)'
       }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Award className="h-16 w-16 mx-auto mb-6 text-white" style={{
+          <div className="text-center mb-8">
+            <Award className="h-14 w-14 mx-auto mb-4 text-white" style={{
               filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.4))'
             }} />
             <h2 
-              className="text-3xl lg:text-4xl mb-8 text-white"
+              className="text-3xl lg:text-4xl mb-6 text-white"
               style={{ 
                 fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                 fontWeight: 700,
@@ -141,10 +141,11 @@ const Home = () => {
                 WebkitTextStroke: '1.5px rgba(0,0,0,0.15)'
               }}
             >
-              장기요양등급, 어떻게 신청하나요?
+              장기요양등급,<br />
+              어떻게 신청하나요?
             </h2>
             <p 
-              className="text-xl lg:text-2xl text-white leading-relaxed max-w-3xl mx-auto mb-16"
+              className="text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto mb-8"
               style={{ 
                 fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                 fontWeight: 500,
