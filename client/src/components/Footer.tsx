@@ -9,23 +9,47 @@ const Footer = () => {
             <img 
               src={logoImg} 
               alt="바른나무요양원 로고" 
-              className="h-24 w-auto"
+              className="h-32 w-auto"
               style={{ filter: 'brightness(1.1)' }}
             />
           </div>
           
-          <div className="space-y-3 text-base">
-            <p className="text-gray-300">
-              <span className="font-semibold text-white">주소:</span> 경기도 포천시
+          <div className="space-y-3 text-lg">
+            <p 
+              className="text-white"
+              style={{
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontWeight: 500,
+                textShadow: '2px 2px 4px rgba(0,0,0,0.5), 1px 1px 2px rgba(0,0,0,0.3)',
+                WebkitTextStroke: '0.5px rgba(0,0,0,0.2)'
+              }}
+            >
+              <span className="font-bold">주소:</span> 경기도 포천시
             </p>
-            <p className="text-gray-300">
-              <span className="font-semibold text-white">전화:</span> 
+            <p 
+              className="text-white"
+              style={{
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontWeight: 500,
+                textShadow: '2px 2px 4px rgba(0,0,0,0.5), 1px 1px 2px rgba(0,0,0,0.3)',
+                WebkitTextStroke: '0.5px rgba(0,0,0,0.2)'
+              }}
+            >
+              <span className="font-bold">전화:</span> 
               <a href="tel:0507-1381-0016" className="ml-2 hover:text-green-400 transition-colors">
                 0507-1381-0016
               </a>
             </p>
-            <p className="text-gray-300">
-              <span className="font-semibold text-white">운영시간:</span> 24시간 (연중무휴)
+            <p 
+              className="text-white"
+              style={{
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontWeight: 500,
+                textShadow: '2px 2px 4px rgba(0,0,0,0.5), 1px 1px 2px rgba(0,0,0,0.3)',
+                WebkitTextStroke: '0.5px rgba(0,0,0,0.2)'
+              }}
+            >
+              <span className="font-bold">운영시간:</span> 24시간 (연중무휴)
             </p>
           </div>
           
