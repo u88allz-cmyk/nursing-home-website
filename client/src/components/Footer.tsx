@@ -9,7 +9,7 @@ const Footer = () => {
             <img 
               src={logoImg} 
               alt="바른나무요양원 로고" 
-              className="h-32 w-auto"
+              className="h-24 w-auto"
               style={{ filter: 'brightness(1.1)' }}
             />
           </div>
