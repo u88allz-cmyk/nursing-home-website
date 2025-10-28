@@ -147,7 +147,8 @@ const Home = () => {
                   2px 2px 0 rgba(0,0,0,0.2),
                   3px 3px 12px rgba(0,0,0,0.5)
                 `,
-                WebkitTextStroke: '1.5px rgba(0,0,0,0.15)'
+                WebkitTextStroke: '1.5px rgba(0,0,0,0.15)',
+                wordBreak: 'keep-all'
               }}
             >
               장기요양등급,<br />
@@ -168,7 +169,8 @@ const Home = () => {
                   2px 2px 8px rgba(0,0,0,0.4)
                 `,
                 WebkitTextStroke: '0.8px rgba(0,0,0,0.1)',
-                lineHeight: '1.8'
+                lineHeight: '1.8',
+                wordBreak: 'keep-all'
               }}
             >
               처음이라 어렵고 막막하신가요?<br />
@@ -208,10 +210,23 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#67BA6D' }}>
+            <h2 
+              className="text-3xl lg:text-4xl font-bold mb-4" 
+              style={{ 
+                color: '#67BA6D',
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                wordBreak: 'keep-all'
+              }}
+            >
               바른나무요양원이 특별한 이유
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              style={{ 
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                wordBreak: 'keep-all'
+              }}
+            >
               포천에 위치한 프리미엄 요양 시설로 최고의 환경과 서비스를 제공합니다
             </p>
           </div>
@@ -221,10 +236,23 @@ const Home = () => {
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#67BA6D20' }}>
                   <Sparkles className="h-10 w-10" style={{ color: '#67BA6D' }} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#67BA6D' }}>
+                <h3 
+                  className="text-2xl font-bold mb-4" 
+                  style={{ 
+                    color: '#67BA6D',
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
+                >
                   청결한 최신 시설
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p 
+                  className="text-gray-700 leading-relaxed text-lg"
+                  style={{ 
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
+                >
                   깔끔하고 현대적인 인테리어로 어르신들이 쾌적하고 편안한 환경에서 지내실 수 있습니다
                 </p>
               </CardContent>
@@ -235,10 +263,23 @@ const Home = () => {
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#67BA6D20' }}>
                   <HeartHandshake className="h-10 w-10" style={{ color: '#67BA6D' }} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#67BA6D' }}>
+                <h3 
+                  className="text-2xl font-bold mb-4" 
+                  style={{ 
+                    color: '#67BA6D',
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
+                >
                   친절한 상담
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p 
+                  className="text-gray-700 leading-relaxed text-lg"
+                  style={{ 
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
+                >
                   장기요양등급 절차와 서류 준비까지 보호자님께 자세하고 친절하게 안내해드립니다
                 </p>
               </CardContent>
@@ -249,10 +290,23 @@ const Home = () => {
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#67BA6D20' }}>
                   <Shield className="h-10 w-10" style={{ color: '#67BA6D' }} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#67BA6D' }}>
+                <h3 
+                  className="text-2xl font-bold mb-4" 
+                  style={{ 
+                    color: '#67BA6D',
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
+                >
                   안전한 돌봄
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p 
+                  className="text-gray-700 leading-relaxed text-lg"
+                  style={{ 
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
+                >
                   우리 부모님처럼 바른 마음과 바른 정성으로 안전하고 건강하게 모십니다
                 </p>
               </CardContent>
