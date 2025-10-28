@@ -67,7 +67,7 @@ const Home = () => {
                   {slide.title}
                 </h2>
                 <p 
-                  className="text-lg md:text-xl lg:text-2xl mb-16 max-w-2xl leading-relaxed text-white font-medium" 
+                  className="text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed text-white font-medium" 
                   style={{ 
                     fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                     textShadow: '2px 2px 6px rgba(0,0,0,0.7), 1px 1px 3px rgba(0,0,0,0.5)'
@@ -75,25 +75,25 @@ const Home = () => {
                 >
                   {slide.subtitle}
                 </p>
-                
-                <div>
-                  <Link href="/gallery">
-                    <Button 
-                      variant="outline" 
-                      className="px-6 py-2 rounded-lg border-2 transition-all duration-300 text-base font-bold bg-white/95 hover:bg-white hover:scale-105"
-                      style={{ 
-                        borderColor: '#67BA6D', 
-                        color: '#67BA6D',
-                        fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
-                      }}
-                      data-testid="button-gallery-hero"
-                    >
-                      <Building2 className="mr-2 h-4 w-4" />
-                      시설 보러가기
-                    </Button>
-                  </Link>
-                </div>
               </div>
+            </div>
+            
+            <div className="absolute bottom-16 left-8 md:left-16 lg:left-24 z-20">
+              <Link href="/gallery">
+                <Button 
+                  variant="outline" 
+                  className="px-6 py-2 rounded-lg border-2 transition-all duration-300 text-base font-bold bg-white/95 hover:bg-white hover:scale-105"
+                  style={{ 
+                    borderColor: '#67BA6D', 
+                    color: '#67BA6D',
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                  }}
+                  data-testid="button-gallery-hero"
+                >
+                  <Building2 className="mr-2 h-4 w-4" />
+                  시설 보러가기
+                </Button>
+              </Link>
             </div>
           </div>
         ))}
