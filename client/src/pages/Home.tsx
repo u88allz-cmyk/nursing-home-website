@@ -115,9 +115,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Spacer */}
-      <div className="bg-white py-6"></div>
-
       {/* Long-term Care Grade Application Section */}
       <section 
         className="py-12 relative bg-cover bg-center" 
@@ -127,7 +124,7 @@ const Home = () => {
           backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-black/30 to-black/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8">
             <Award className="h-14 w-14 mx-auto mb-4 text-white" style={{
