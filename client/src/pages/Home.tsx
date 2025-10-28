@@ -116,7 +116,7 @@ const Home = () => {
       </div>
 
       {/* Spacer */}
-      <div className="bg-white py-12"></div>
+      <div className="bg-white py-6"></div>
 
       {/* Long-term Care Grade Application Section */}
       <section 
