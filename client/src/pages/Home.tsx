@@ -80,8 +80,7 @@ const Home = () => {
                   <Link href="/gallery">
                     <Button 
                       variant="outline" 
-                      size="lg" 
-                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold bg-white/95 hover:bg-white hover:scale-105"
+                      className="px-6 py-2 rounded-lg border-2 transition-all duration-300 text-base font-bold bg-white/95 hover:bg-white hover:scale-105"
                       style={{ 
                         borderColor: '#67BA6D', 
                         color: '#67BA6D',
@@ -89,7 +88,7 @@ const Home = () => {
                       }}
                       data-testid="button-gallery-hero"
                     >
-                      <Building2 className="mr-2 h-5 w-5" />
+                      <Building2 className="mr-2 h-4 w-4" />
                       시설 보러가기
                     </Button>
                   </Link>
