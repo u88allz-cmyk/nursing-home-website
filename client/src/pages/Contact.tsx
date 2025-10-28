@@ -18,10 +18,10 @@ const Contact = () => {
               상담안내
             </h1>
             <p 
-              className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
               style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
             >
-              바른나무요양원에서 어르신들을 위한 최상의 케어 서비스를 제공합니다.<br />
+              바른나무요양원에서 어르신들을 위한 최상의 케어 서비스를 제공합니다.
               언제든지 편하게 문의해 주세요.
             </p>
           </div>
@@ -46,11 +46,10 @@ const Contact = () => {
                   전화 상담
                 </h2>
                 <p 
-                  className="text-gray-600 mb-6 text-lg leading-relaxed"
+                  className="text-gray-600 mb-6 text-base leading-relaxed"
                   style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
                 >
-                  바로 전화 연결하여<br />
-                  친절한 상담을 받으실 수 있습니다
+                  바로 전화 연결하여 친절한 상담을 받으실 수 있습니다
                 </p>
                 <a href="tel:0507-1381-0016">
                   <Button 
@@ -94,11 +93,10 @@ const Contact = () => {
                   네이버 예약
                 </h2>
                 <p 
-                  className="text-gray-600 mb-6 text-lg leading-relaxed"
+                  className="text-gray-600 mb-6 text-base leading-relaxed"
                   style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
                 >
-                  네이버 플레이스를 통해<br />
-                  방문 상담을 예약하실 수 있습니다
+                  네이버 플레이스를 통해 방문 상담을 예약하실 수 있습니다
                 </p>
                 <a 
                   href="https://booking.naver.com/booking/13/bizes/1068039" 
