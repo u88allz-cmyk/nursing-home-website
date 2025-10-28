@@ -14,18 +14,18 @@ const Home = () => {
   const slides = [
     {
       image: hero1,
-      title: "청결하고 깔끔한 최신 시설",
-      subtitle: "프리미엄 요양 서비스의 새로운 기준"
+      title: "포천 프리미엄 요양원",
+      subtitle: "청결한 최신 시설에서 우리 부모님을 모십니다"
     },
     {
       image: hero2,
-      title: "바른 마음, 바른 태도, 바른 정성",
-      subtitle: "우리 부모님을 건강하고 편안하게 모십니다"
+      title: "바른 마음으로",
+      subtitle: "건강하고 편안하게, 안전하고 행복하게"
     },
     {
       image: hero3,
-      title: "친절한 상담과 세심한 케어",
-      subtitle: "장기요양등급부터 입소까지 자세히 안내해드립니다"
+      title: "친절한 상담",
+      subtitle: "장기요양등급부터 입소까지 처음부터 끝까지 안내해드립니다"
     }
   ];
 
@@ -52,20 +52,26 @@ const Home = () => {
               alt={slide.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-white/15" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
             
             <div className="relative h-full flex items-center justify-center">
               <div className="text-center px-4 max-w-4xl mx-auto">
                 <h2 
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-xl" 
-                  style={{ color: '#67BA6D', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" 
+                  style={{ 
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    textShadow: '3px 3px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.6)'
+                  }}
                 >
                   {slide.title}
                 </h2>
                 <p 
-                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-semibold" 
-                  style={{ color: '#2d2d2d', textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}
+                  className="text-xl md:text-2xl lg:text-3xl mb-10 max-w-3xl mx-auto leading-relaxed text-white font-medium" 
+                  style={{ 
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    textShadow: '2px 2px 6px rgba(0,0,0,0.7), 1px 1px 3px rgba(0,0,0,0.5)'
+                  }}
                 >
                   {slide.subtitle}
                 </p>
@@ -74,8 +80,11 @@ const Home = () => {
                   <a href="tel:0507-1381-0016">
                     <Button 
                       size="lg" 
-                      className="text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold"
-                      style={{ backgroundColor: '#67BA6D' }}
+                      className="text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold hover:scale-105"
+                      style={{ 
+                        backgroundColor: '#67BA6D',
+                        fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                      }}
                       data-testid="button-call-hero"
                     >
                       <Phone className="mr-2 h-5 w-5" />
@@ -86,12 +95,16 @@ const Home = () => {
                     <Button 
                       variant="outline" 
                       size="lg" 
-                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold bg-white/90"
-                      style={{ borderColor: '#67BA6D', color: '#67BA6D' }}
+                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold bg-white/95 hover:bg-white"
+                      style={{ 
+                        borderColor: '#67BA6D', 
+                        color: '#67BA6D',
+                        fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                      }}
                       data-testid="button-gallery-hero"
                     >
                       <Building2 className="mr-2 h-5 w-5" />
-                      시설 둘러보기
+                      시설 보러가기
                     </Button>
                   </Link>
                 </div>
