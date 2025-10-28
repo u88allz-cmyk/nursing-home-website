@@ -6,6 +6,7 @@ import { Sparkles, Shield, HeartHandshake, Phone, Building2, Award } from "lucid
 import hero1 from "@/assets/hero1.jpg";
 import hero2 from "@/assets/hero2.jpg";
 import hero3 from "@/assets/hero3.jpg";
+import consultationBg from "@assets/제목을-입력해주세요_-001_1761645793819.png";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -115,11 +116,16 @@ const Home = () => {
       </div>
 
       {/* Long-term Care Grade Application Section */}
-      <section className="py-12" style={{ 
-        background: 'linear-gradient(135deg, #7BC886 0%, #8ED497 50%, #7BC886 100%)',
-        boxShadow: 'inset 0 2px 20px rgba(0,0,0,0.1)'
-      }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-12 relative bg-cover bg-center" 
+        style={{ 
+          backgroundImage: `url(${consultationBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8">
             <Award className="h-14 w-14 mx-auto mb-4 text-white" style={{
               filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.4))'
