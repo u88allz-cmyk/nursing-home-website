@@ -234,7 +234,7 @@ const Home = () => {
                   <HeartHandshake className="h-10 w-10" style={{ color: '#67BA6D' }} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#67BA6D' }}>
-                  친절한 원장님
+                  친절한 상담
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
                   장기요양등급 절차와 서류 준비까지 보호자님께 자세하고 친절하게 안내해드립니다
