@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Activity, Users, Palette, Shield, MessageCircle, FileText, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Heart, Activity, Users, Palette, Shield, MessageCircle, FileText } from "lucide-react";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   useEffect(() => {
     document.title = "프로그램 안내 - 바른나무요양원 | 전문 케어 프로그램";
@@ -53,19 +55,34 @@ const Programs = () => {
   ];
 
   useEffect(() => {
+    if (isPaused) return;
+    
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % programs.length);
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [programs.length]);
+  }, [programs.length, isPaused]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % programs.length);
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + programs.length) % programs.length);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance > 0) {
+        setCurrentSlide((prev) => (prev + 1) % programs.length);
+      } else {
+        setCurrentSlide((prev) => (prev - 1 + programs.length) % programs.length);
+      }
+    }
   };
 
   return (
@@ -132,7 +149,20 @@ const Programs = () => {
           </div>
 
           {/* Mobile Auto Slider */}
-          <div className="md:hidden relative">
+          <div 
+            className="md:hidden relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={(e) => {
+              setIsPaused(true);
+              handleTouchStart(e);
+            }}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={(e) => {
+              handleTouchEnd();
+              setIsPaused(false);
+            }}
+          >
             <div className="overflow-hidden">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
@@ -173,26 +203,6 @@ const Programs = () => {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white/90 hover:bg-white shadow-lg z-10"
-              onClick={prevSlide}
-              data-testid="button-prev-slide"
-            >
-              <ChevronLeft className="h-6 w-6" style={{ color: '#67BA6D' }} />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white/90 hover:bg-white shadow-lg z-10"
-              onClick={nextSlide}
-              data-testid="button-next-slide"
-            >
-              <ChevronRight className="h-6 w-6" style={{ color: '#67BA6D' }} />
-            </Button>
-
             {/* Slide Indicators */}
             <div className="flex justify-center gap-2 mt-6">
               {programs.map((_, index) => (
@@ -214,7 +224,7 @@ const Programs = () => {
               className="text-center text-sm text-gray-500 mt-4"
               style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
             >
-              자동으로 슬라이드됩니다 ({currentSlide + 1}/{programs.length})
+              좌우로 밀어서 볼 수 있습니다 ({currentSlide + 1}/{programs.length})
             </p>
           </div>
         </div>
