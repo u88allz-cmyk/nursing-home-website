@@ -76,7 +76,7 @@ const Contact = () => {
                   className="text-sm text-gray-500 mt-4"
                   style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
                 >
-                  연중무휴 24시간
+                  전화 상담 예약
                 </p>
               </CardContent>
             </Card>
@@ -154,19 +154,18 @@ const Contact = () => {
                 </h3>
                 <ul 
                   className="space-y-3 text-gray-700"
-                  style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
+                  style={{ 
+                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    wordBreak: 'keep-all'
+                  }}
                 >
                   <li className="flex items-start">
                     <span className="text-green-600 mr-2">•</span>
-                    <span>장기요양등급 신청부터 입소까지 전 과정을 친절하게 안내해드립니다</span>
+                    <span>편안하게 연락주시면 친절한 상담 도와드리겠습니다.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 mr-2">•</span>
-                    <span>방문 상담을 원하시는 경우 네이버 예약을 통해 미리 예약해주세요</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span>전화 상담은 연중무휴 24시간 가능합니다</span>
+                    <span>전화 및 네이버 예약을 통해 방문 상담 가능합니다</span>
                   </li>
                 </ul>
               </CardContent>
