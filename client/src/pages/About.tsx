@@ -154,11 +154,11 @@ const About = () => {
             친절하게 상담해드립니다
           </p>
           <a 
-            href="tel:0507-1381-0016"
+            href="tel:0507-1450-8033"
             className="inline-block bg-white text-green-600 px-10 py-4 rounded-xl text-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             data-testid="link-call-about"
           >
-            0507-1381-0016
+            0507-1450-8033
           </a>
         </div>
       </section>

@@ -58,7 +58,7 @@ const Contact = () => {
                   바로 전화 연결하여<br />
                   친절한 상담을 받으실 수 있습니다
                 </p>
-                <a href="tel:0507-1381-0016">
+                <a href="tel:0507-1450-8033">
                   <Button 
                     size="lg" 
                     className="w-full text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold hover:scale-105"
@@ -69,7 +69,7 @@ const Contact = () => {
                     data-testid="button-call-contact"
                   >
                     <Phone className="mr-2 h-5 w-5" />
-                    0507-1381-0016
+                    상담 연결
                   </Button>
                 </a>
                 <p 

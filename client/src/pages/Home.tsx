@@ -177,7 +177,7 @@ const Home = () => {
               바른나무요양원이 처음부터 끝까지 친절하게 안내해드립니다
             </p>
             <div className="flex justify-center">
-              <a href="tel:0507-1381-0016">
+              <a href="tel:0507-1450-8033">
                 <Button 
                   size="lg" 
                   className="bg-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border-2"
