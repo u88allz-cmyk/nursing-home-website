@@ -15,7 +15,7 @@ const Home = () => {
           alt="포천 프리미엄 요양시설"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-40" />
+        <div className="absolute inset-0 bg-black opacity-30" />
         
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center px-4 max-w-4xl mx-auto">
