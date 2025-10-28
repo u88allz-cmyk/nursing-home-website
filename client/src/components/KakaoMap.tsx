@@ -24,7 +24,34 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       return;
     }
 
-    const loadKakaoMap = () => {
+    const loadKakaoMapScript = () => {
+      return new Promise<void>((resolve, reject) => {
+        if (window.kakao?.maps) {
+          resolve();
+          return;
+        }
+
+        const script = document.createElement('script');
+        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&libraries=services&autoload=false`;
+        script.async = true;
+        script.onload = () => {
+          if (window.kakao?.maps) {
+            window.kakao.maps.load(() => {
+              console.log('카카오 지도 SDK 로드 완료');
+              resolve();
+            });
+          } else {
+            reject(new Error('카카오 지도 SDK 로드 실패'));
+          }
+        };
+        script.onerror = () => {
+          reject(new Error('카카오 지도 스크립트 로드 실패'));
+        };
+        document.head.appendChild(script);
+      });
+    };
+
+    const initMap = () => {
       if (!mapContainer.current) return;
 
       try {
@@ -148,26 +175,14 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       }
     };
 
-    if (window.kakao?.maps) {
-      console.log('카카오 지도 SDK 로드 완료, 지도 초기화 시작');
-      loadKakaoMap();
-    } else {
-      console.log('카카오 지도 SDK 로딩 대기 중...');
-      const checkKakao = setInterval(() => {
-        if (window.kakao?.maps) {
-          console.log('카카오 지도 SDK 로드 완료');
-          clearInterval(checkKakao);
-          loadKakaoMap();
-        }
-      }, 100);
-      
-      setTimeout(() => {
-        clearInterval(checkKakao);
-        if (!window.kakao?.maps) {
-          console.error('카카오 지도 SDK 로드 타임아웃');
-        }
-      }, 10000);
-    }
+    loadKakaoMapScript()
+      .then(() => {
+        console.log('카카오 지도 스크립트 로드 성공, 지도 초기화 시작');
+        initMap();
+      })
+      .catch((error) => {
+        console.error('카카오 지도 로드 오류:', error);
+      });
   }, []);
 
   return (
