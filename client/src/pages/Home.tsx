@@ -116,11 +116,11 @@ const Home = () => {
       </div>
 
       {/* Spacer */}
-      <div className="bg-white py-6"></div>
+      <div className="bg-white py-2"></div>
 
       {/* Long-term Care Grade Application Section */}
       <section 
-        className="py-12 relative bg-cover bg-center" 
+        className="py-8 relative bg-cover bg-center" 
         style={{ 
           backgroundImage: `url(${consultationBg})`,
           backgroundSize: 'cover',
