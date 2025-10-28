@@ -133,7 +133,7 @@ const Contact = () => {
                   className="text-sm text-gray-500 mt-4"
                   style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
                 >
-                  방문 상담 예약
+                  네이버 상담 예약
                 </p>
               </CardContent>
             </Card>
@@ -165,7 +165,7 @@ const Contact = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 mr-2">•</span>
-                    <span>편안하게 연락주시면 친절한 상담 도와드리겠습니다.</span>
+                    <span>연중무휴 운영합니다</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 mr-2">•</span>
