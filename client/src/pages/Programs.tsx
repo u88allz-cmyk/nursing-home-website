@@ -1,17 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Activity, Users, Palette, Shield, MessageCircle, FileText } from "lucide-react";
-import useEmblaCarousel from 'embla-carousel-react';
+import { Heart, Activity, Users, Palette, Shield, MessageCircle, FileText, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Programs = () => {
-  const [emblaRef] = useEmblaCarousel({ 
-    align: 'start',
-    loop: false,
-    skipSnaps: false,
-    breakpoints: {
-      '(min-width: 768px)': { active: false }
-    }
-  });
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     document.title = "프로그램 안내 - 바른나무요양원 | 전문 케어 프로그램";
@@ -59,6 +52,22 @@ const Programs = () => {
     }
   ];
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % programs.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [programs.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % programs.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + programs.length) % programs.length);
+  };
+
   return (
     <div className="animate-fade-in">
       <section className="py-20 bg-white">
@@ -87,7 +96,11 @@ const Programs = () => {
           {/* Desktop Grid */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program, index) => (
-              <Card key={index} className="border-2 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <Card 
+                key={index} 
+                className="border-2 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                data-testid={`card-program-${index}`}
+              >
                 <CardContent className="p-8">
                   <div 
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
@@ -118,51 +131,92 @@ const Programs = () => {
             ))}
           </div>
 
-          {/* Mobile Slider */}
-          <div className="md:hidden overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-4">
-              {programs.map((program, index) => (
-                <div key={index} className="flex-[0_0_85%] min-w-0">
-                  <Card className="border-2 shadow-lg h-full">
-                    <CardContent className="p-6">
-                      <div 
-                        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-                        style={{ backgroundColor: '#67BA6D20' }}
-                      >
-                        <program.icon className="h-8 w-8" style={{ color: '#67BA6D' }} />
-                      </div>
-                      <h3 
-                        className="text-xl font-bold mb-4"
-                        style={{ 
-                          color: '#67BA6D',
-                          fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
-                        }}
-                      >
-                        {program.title}
-                      </h3>
-                      <p 
-                        className="text-gray-700 leading-relaxed"
-                        style={{ 
-                          fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
-                          wordBreak: 'keep-all'
-                        }}
-                      >
-                        {program.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
+          {/* Mobile Auto Slider */}
+          <div className="md:hidden relative">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {programs.map((program, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-2">
+                    <Card className="border-2 shadow-lg">
+                      <CardContent className="p-6">
+                        <div 
+                          className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                          style={{ backgroundColor: '#67BA6D20' }}
+                        >
+                          <program.icon className="h-8 w-8" style={{ color: '#67BA6D' }} />
+                        </div>
+                        <h3 
+                          className="text-xl font-bold mb-4"
+                          style={{ 
+                            color: '#67BA6D',
+                            fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                          }}
+                        >
+                          {program.title}
+                        </h3>
+                        <p 
+                          className="text-gray-700 leading-relaxed"
+                          style={{ 
+                            fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                            wordBreak: 'keep-all'
+                          }}
+                        >
+                          {program.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white/90 hover:bg-white shadow-lg z-10"
+              onClick={prevSlide}
+              data-testid="button-prev-slide"
+            >
+              <ChevronLeft className="h-6 w-6" style={{ color: '#67BA6D' }} />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white/90 hover:bg-white shadow-lg z-10"
+              onClick={nextSlide}
+              data-testid="button-next-slide"
+            >
+              <ChevronRight className="h-6 w-6" style={{ color: '#67BA6D' }} />
+            </Button>
+
+            {/* Slide Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {programs.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide ? 'w-8' : ''
+                  }`}
+                  style={{ 
+                    backgroundColor: index === currentSlide ? '#67BA6D' : '#D1D5DB'
+                  }}
+                  onClick={() => setCurrentSlide(index)}
+                  data-testid={`button-slide-indicator-${index}`}
+                />
               ))}
             </div>
-          </div>
 
-          {/* Mobile Swipe Hint */}
-          <p 
-            className="md:hidden text-center text-sm text-gray-500 mt-6"
-            style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
-          >
-            ← 옆으로 슬라이드하여 더 보기 →
-          </p>
+            <p 
+              className="text-center text-sm text-gray-500 mt-4"
+              style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
+            >
+              자동으로 슬라이드됩니다 ({currentSlide + 1}/{programs.length})
+            </p>
+          </div>
         </div>
       </section>
     </div>
