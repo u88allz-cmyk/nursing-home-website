@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <div className="animate-fade-in">
       {/* Hero Slider Section */}
-      <div className="relative w-full h-[550px] overflow-hidden">
+      <div className="relative w-full h-96 overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -115,9 +115,12 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Spacer */}
+      <div className="bg-white py-6"></div>
+
       {/* Long-term Care Grade Application Section */}
       <section 
-        className="py-8 relative bg-cover bg-center" 
+        className="py-12 relative bg-cover bg-center" 
         style={{ 
           backgroundImage: `url(${consultationBg})`,
           backgroundSize: 'cover',
