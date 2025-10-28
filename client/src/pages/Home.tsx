@@ -117,7 +117,7 @@ const Home = () => {
 
       {/* Long-term Care Grade Application Section */}
       <section 
-        className="py-12 relative bg-cover bg-center" 
+        className="py-12 mt-16 relative bg-cover bg-center" 
         style={{ 
           backgroundImage: `url(${consultationBg})`,
           backgroundSize: 'cover',
