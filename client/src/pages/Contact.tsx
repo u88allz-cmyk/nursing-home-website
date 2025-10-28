@@ -161,6 +161,10 @@ const Contact = () => {
                 >
                   <li className="flex items-start">
                     <span className="text-green-600 mr-2">•</span>
+                    <span>장기요양등급 신청부터 입소까지 전 과정을 친절하게 안내해드립니다</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
                     <span>편안하게 연락주시면 친절한 상담 도와드리겠습니다.</span>
                   </li>
                   <li className="flex items-start">
