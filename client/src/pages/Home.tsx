@@ -1,117 +1,52 @@
 import { Link } from "wouter";
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Shield, HeartHandshake, Phone, Building2, Award } from "lucide-react";
 import hero1 from "@/assets/hero1.jpg";
-import hero2 from "@/assets/hero2.jpg";
-import hero3 from "@/assets/hero3.jpg";
 import consultationBg from "@assets/제목을-입력해주세요_-001_1761645793819.png";
 
 const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const slides = [
-    {
-      image: hero1,
-      title: "청결하고 깔끔한 최신 시설",
-      subtitle: "프리미엄 요양 서비스의 새로운 기준"
-    },
-    {
-      image: hero2,
-      title: "바른 마음, 바른 태도, 바른 정성",
-      subtitle: "우리 부모님을 건강하고 편안하게 모십니다"
-    },
-    {
-      image: hero3,
-      title: "친절한 상담과 세심한 케어",
-      subtitle: "장기요양등급부터 입소까지 자세히 안내해드립니다"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="animate-fade-in">
-      {/* Hero Slider Section */}
+      {/* Hero Section */}
       <div className="relative w-full h-96 overflow-hidden">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img 
-              src={slide.image} 
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-white/15" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
-            
-            <div className="relative h-full flex items-center justify-center">
-              <div className="text-center px-4 max-w-4xl mx-auto">
-                <h2 
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-xl" 
-                  style={{ color: '#67BA6D', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}
-                >
-                  {slide.title}
-                </h2>
-                <p 
-                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-semibold" 
-                  style={{ color: '#2d2d2d', textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}
-                >
-                  {slide.subtitle}
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="tel:0507-1381-0016">
-                    <Button 
-                      size="lg" 
-                      className="text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold"
-                      style={{ backgroundColor: '#67BA6D' }}
-                      data-testid="button-call-hero"
-                    >
-                      <Phone className="mr-2 h-5 w-5" />
-                      전화 상담
-                    </Button>
-                  </a>
-                  <Link href="/gallery">
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold bg-white/90"
-                      style={{ borderColor: '#67BA6D', color: '#67BA6D' }}
-                      data-testid="button-gallery-hero"
-                    >
-                      <Building2 className="mr-2 h-5 w-5" />
-                      시설 둘러보기
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+        <img 
+          src={hero1} 
+          alt="포천 프리미엄 요양시설"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-40" />
         
-        {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
-              }`}
-              data-testid={`slider-indicator-${index}`}
-            />
-          ))}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="text-center px-4 max-w-4xl mx-auto">
+            <h2 
+              className="text-4xl md:text-5xl lg:text-6xl mb-6 text-white" 
+              style={{ 
+                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontWeight: 700,
+                textShadow: '3px 3px 6px rgba(0,0,0,0.5), 2px 2px 4px rgba(0,0,0,0.3)',
+                WebkitTextStroke: '0.5px rgba(0,0,0,0.2)'
+              }}
+            >
+              포천 프리미엄 요양시설
+            </h2>
+            
+            <Link href="/about">
+              <Button 
+                size="lg" 
+                className="bg-white px-12 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border-2 text-xl"
+                style={{ 
+                  color: '#4A9B5C',
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                  fontWeight: 700
+                }}
+                data-testid="button-view-facility"
+              >
+                시설 보러가기
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 
