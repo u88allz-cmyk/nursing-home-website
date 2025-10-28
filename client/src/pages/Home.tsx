@@ -61,16 +61,18 @@ const Home = () => {
                   className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white" 
                   style={{ 
                     fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
-                    textShadow: '3px 3px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.6)'
+                    textShadow: '3px 3px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.6)',
+                    wordBreak: 'keep-all'
                   }}
                 >
                   {slide.title}
                 </h2>
                 <p 
-                  className="text-lg md:text-xl lg:text-2xl mb-16 max-w-2xl leading-relaxed text-white font-medium" 
+                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl leading-relaxed text-white font-medium" 
                   style={{ 
                     fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
-                    textShadow: '2px 2px 6px rgba(0,0,0,0.7), 1px 1px 3px rgba(0,0,0,0.5)'
+                    textShadow: '2px 2px 6px rgba(0,0,0,0.7), 1px 1px 3px rgba(0,0,0,0.5)',
+                    wordBreak: 'keep-all'
                   }}
                 >
                   {slide.subtitle}
