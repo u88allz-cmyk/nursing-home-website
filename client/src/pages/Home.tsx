@@ -24,8 +24,8 @@ const Home = () => {
     },
     {
       image: hero3,
-      title: "친절한 상담",
-      subtitle: "장기요양등급부터 입소까지 처음부터 끝까지 안내해드립니다"
+      title: "바른 정성으로",
+      subtitle: "우리 부모님을 가족처럼 정성껏 모십니다"
     }
   ];
 
@@ -52,13 +52,13 @@ const Home = () => {
               alt={slide.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 z-0" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40 z-0" />
+            <div className="absolute inset-0 bg-black/60 z-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 z-0" />
             
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="text-center px-4 max-w-4xl mx-auto">
+            <div className="absolute inset-0 flex items-center z-10">
+              <div className="px-8 md:px-16 lg:px-24 max-w-6xl">
                 <h2 
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" 
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white" 
                   style={{ 
                     fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                     textShadow: '3px 3px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.6)'
@@ -67,7 +67,7 @@ const Home = () => {
                   {slide.title}
                 </h2>
                 <p 
-                  className="text-xl md:text-2xl lg:text-3xl mb-10 max-w-3xl mx-auto leading-relaxed text-white font-medium" 
+                  className="text-lg md:text-xl lg:text-2xl mb-16 max-w-2xl leading-relaxed text-white font-medium" 
                   style={{ 
                     fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
                     textShadow: '2px 2px 6px rgba(0,0,0,0.7), 1px 1px 3px rgba(0,0,0,0.5)'
@@ -76,26 +76,12 @@ const Home = () => {
                   {slide.subtitle}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="tel:0507-1381-0016">
-                    <Button 
-                      size="lg" 
-                      className="text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold hover:scale-105"
-                      style={{ 
-                        backgroundColor: '#67BA6D',
-                        fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
-                      }}
-                      data-testid="button-call-hero"
-                    >
-                      <Phone className="mr-2 h-5 w-5" />
-                      전화 상담
-                    </Button>
-                  </a>
+                <div>
                   <Link href="/gallery">
                     <Button 
                       variant="outline" 
                       size="lg" 
-                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold bg-white/95 hover:bg-white"
+                      className="px-8 py-4 rounded-xl border-2 transition-all duration-300 text-lg font-bold bg-white/95 hover:bg-white hover:scale-105"
                       style={{ 
                         borderColor: '#67BA6D', 
                         color: '#67BA6D',
