@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Shield, HeartHandshake, Phone, Building2, Award } from "lucide-react";
-import hero1 from "@/assets/hero1.jpg";
+import heroImg from "@assets/다운로드_1761646398563.jpg";
 import consultationBg from "@assets/제목을-입력해주세요_-001_1761645793819.png";
 
 const Home = () => {
@@ -11,11 +11,11 @@ const Home = () => {
       {/* Hero Section */}
       <div className="relative w-full h-96 overflow-hidden">
         <img 
-          src={hero1} 
+          src={heroImg} 
           alt="포천 프리미엄 요양시설"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-30" />
+        <div className="absolute inset-0 bg-black opacity-35" />
         
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center px-4 max-w-4xl mx-auto">
