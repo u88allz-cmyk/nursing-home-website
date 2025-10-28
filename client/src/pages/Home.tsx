@@ -6,7 +6,7 @@ import { Sparkles, Shield, HeartHandshake, Phone, Building2, Award } from "lucid
 import hero1 from "@/assets/hero1.jpg";
 import hero2 from "@/assets/hero2.jpg";
 import hero3 from "@/assets/hero3.jpg";
-import consultationBg from "@assets/제목을-입력해주세요_-001_1761645793819.png";
+import consultationBg from "@assets/제목을-입력해주세요_-001_1761655456760.png";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
