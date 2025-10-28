@@ -2,54 +2,11 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Shield, HeartHandshake, Phone, Building2, Award } from "lucide-react";
-import heroImg from "@assets/다운로드_1761646398563.jpg";
 import consultationBg from "@assets/제목을-입력해주세요_-001_1761645793819.png";
 
 const Home = () => {
   return (
     <div className="animate-fade-in">
-      {/* Hero Section */}
-      <div className="relative w-full h-96 overflow-hidden">
-        <img 
-          src={heroImg} 
-          alt="포천 프리미엄 요양시설"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black opacity-35" />
-        
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center px-4 max-w-4xl mx-auto">
-            <h2 
-              className="text-4xl md:text-5xl lg:text-6xl mb-6 text-white" 
-              style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
-                fontWeight: 700,
-                textShadow: '3px 3px 6px rgba(0,0,0,0.5), 2px 2px 4px rgba(0,0,0,0.3)',
-                WebkitTextStroke: '0.5px rgba(0,0,0,0.2)'
-              }}
-            >
-              포천 프리미엄 요양시설
-            </h2>
-            
-            <Link href="/about">
-              <Button 
-                size="lg" 
-                className="bg-white px-12 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border-2 text-xl"
-                style={{ 
-                  color: '#4A9B5C',
-                  borderColor: 'rgba(255,255,255,0.5)',
-                  fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
-                  fontWeight: 700
-                }}
-                data-testid="button-view-facility"
-              >
-                시설 보러가기
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Long-term Care Grade Application Section */}
       <section 
         className="py-12 relative bg-cover bg-center" 
