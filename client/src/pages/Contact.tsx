@@ -110,7 +110,7 @@ const Contact = () => {
                   방문 상담을 예약하실 수 있습니다
                 </p>
                 <a 
-                  href="https://booking.naver.com/booking/13/bizes/1068039" 
+                  href="https://map.naver.com/p/entry/place/1081117021?placePath=/ticket&searchType=place&lng=127.1410647&lat=37.8301969&c=15.00,0,0,0,dh" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
