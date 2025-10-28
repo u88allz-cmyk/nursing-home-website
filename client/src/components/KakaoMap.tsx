@@ -1,195 +1,24 @@
-import { useEffect, useRef } from 'react';
-
-declare global {
-  interface Window {
-    kakao: any;
-  }
-}
-
 interface KakaoMapProps {
   className?: string;
 }
 
 const KakaoMap = ({ className = "" }: KakaoMapProps) => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const apiKey = import.meta.env.VITE_KAKAO_MAP_API_KEY;
-    
-    console.log('카카오 지도 초기화 시작');
-    console.log('API 키 존재 여부:', !!apiKey);
-    
-    if (!apiKey) {
-      console.error('카카오 지도 API 키가 없습니다. 환경 변수를 확인하세요.');
-      return;
-    }
-
-    const loadKakaoMapScript = () => {
-      return new Promise<void>((resolve, reject) => {
-        if (window.kakao?.maps) {
-          resolve();
-          return;
-        }
-
-        const script = document.createElement('script');
-        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&libraries=services&autoload=false`;
-        script.async = true;
-        script.onload = () => {
-          if (window.kakao?.maps) {
-            window.kakao.maps.load(() => {
-              console.log('카카오 지도 SDK 로드 완료');
-              resolve();
-            });
-          } else {
-            reject(new Error('카카오 지도 SDK 로드 실패'));
-          }
-        };
-        script.onerror = () => {
-          reject(new Error('카카오 지도 스크립트 로드 실패'));
-        };
-        document.head.appendChild(script);
-      });
-    };
-
-    const initMap = () => {
-      if (!mapContainer.current) return;
-
-      try {
-        const ps = new window.kakao.maps.services.Places();
-
-        ps.keywordSearch('바른나무요양원 포천', function(data: any, status: any) {
-          if (status === window.kakao.maps.services.Status.OK) {
-            const place = data[0];
-            const coords = new window.kakao.maps.LatLng(place.y, place.x);
-
-            const options = {
-              center: coords,
-              level: 3
-            };
-
-            const map = new window.kakao.maps.Map(mapContainer.current, options);
-
-            const marker = new window.kakao.maps.Marker({
-              position: coords
-            });
-
-            marker.setMap(map);
-
-            const content = `
-              <div style="
-                background: white;
-                border: 2px solid #DC3545;
-                border-radius: 8px;
-                padding: 8px 12px;
-                font-size: 15px;
-                font-weight: bold;
-                color: #DC3545;
-                box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-                position: relative;
-                text-align: center;
-                white-space: nowrap;
-                width: fit-content;
-                display: inline-block;
-                font-family: 'LotteMartHappy', 'Noto Sans KR', sans-serif;
-              ">
-                바른나무요양원
-                <div style="
-                  position: absolute;
-                  bottom: -12px;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 0;
-                  height: 0;
-                  border-left: 12px solid transparent;
-                  border-right: 12px solid transparent;
-                  border-top: 12px solid #DC3545;
-                "></div>
-              </div>
-            `;
-
-            const customOverlay = new window.kakao.maps.CustomOverlay({
-              map: map,
-              position: coords,
-              content: content,
-              yAnchor: 1.3
-            });
-            
-          } else {
-            const coords = new window.kakao.maps.LatLng(37.8302, 127.1411);
-
-            const options = {
-              center: coords,
-              level: 3
-            };
-
-            const map = new window.kakao.maps.Map(mapContainer.current, options);
-
-            const marker = new window.kakao.maps.Marker({
-              position: coords
-            });
-
-            marker.setMap(map);
-
-            const content = `
-              <div style="
-                background: white;
-                border: 2px solid #DC3545;
-                border-radius: 8px;
-                padding: 8px 12px;
-                font-size: 15px;
-                font-weight: bold;
-                color: #DC3545;
-                box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-                position: relative;
-                text-align: center;
-                white-space: nowrap;
-                width: fit-content;
-                display: inline-block;
-                font-family: 'LotteMartHappy', 'Noto Sans KR', sans-serif;
-              ">
-                바른나무요양원
-                <div style="
-                  position: absolute;
-                  bottom: -12px;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 0;
-                  height: 0;
-                  border-left: 12px solid transparent;
-                  border-right: 12px solid transparent;
-                  border-top: 12px solid #DC3545;
-                "></div>
-              </div>
-            `;
-
-            const customOverlay = new window.kakao.maps.CustomOverlay({
-              map: map,
-              position: coords,
-              content: content,
-              yAnchor: 1.3
-            });
-          }
-        });
-      } catch (error) {
-        console.error('카카오 지도 초기화 오류:', error);
-      }
-    };
-
-    loadKakaoMapScript()
-      .then(() => {
-        console.log('카카오 지도 스크립트 로드 성공, 지도 초기화 시작');
-        initMap();
-      })
-      .catch((error) => {
-        console.error('카카오 지도 로드 오류:', error);
-      });
-  }, []);
-
+  // 바른나무요양원 주소: 경기 포천시 소흘읍 송우리 726-78
+  // 네이버 지도 iframe 사용 (더 안정적)
+  
   return (
-    <div 
-      ref={mapContainer} 
-      className={`w-full h-full min-h-[350px] rounded-2xl bg-gray-100 ${className}`}
-    />
+    <div className={`w-full h-full min-h-[350px] rounded-2xl overflow-hidden ${className}`}>
+      <iframe
+        src="https://map.naver.com/p/entry/place/1081117021?c=15.00,0,0,0,dh"
+        width="100%"
+        height="100%"
+        style={{ border: 0, minHeight: '350px' }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="바른나무요양원 위치"
+      />
+    </div>
   );
 };
 
