@@ -6,7 +6,7 @@ const Header = () => {
 
   const navItems = [
     { href: "/gallery", label: "시설안내" },
-    { href: "/programs", label: "프로그램" },
+    { href: "/programs", label: "서비스" },
     { href: "/contact", label: "상담안내" },
     { href: "/location", label: "오시는길" },
   ];
