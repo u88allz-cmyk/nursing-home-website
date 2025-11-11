@@ -60,7 +60,7 @@ const Home = () => {
                 <h2 
                   className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white" 
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     textShadow: '3px 3px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.6)',
                     wordBreak: 'keep-all'
                   }}
@@ -70,7 +70,7 @@ const Home = () => {
                 <p 
                   className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl leading-relaxed text-white font-medium" 
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     textShadow: '2px 2px 6px rgba(0,0,0,0.7), 1px 1px 3px rgba(0,0,0,0.5)',
                     wordBreak: 'keep-all'
                   }}
@@ -86,7 +86,7 @@ const Home = () => {
                       style={{ 
                         borderColor: '#67BA6D', 
                         color: '#67BA6D',
-                        fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                        fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                       }}
                       data-testid="button-gallery-hero"
                     >
@@ -136,7 +136,7 @@ const Home = () => {
             <h2 
               className="text-3xl lg:text-4xl mb-6 text-white"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 fontWeight: 700,
                 letterSpacing: '-0.5px',
                 textShadow: `
@@ -157,7 +157,7 @@ const Home = () => {
             <p 
               className="text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto mb-8"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 fontWeight: 500,
                 letterSpacing: '-0.3px',
                 textShadow: `
@@ -184,7 +184,7 @@ const Home = () => {
                   style={{ 
                     color: '#4A9B5C',
                     borderColor: 'rgba(255,255,255,0.5)',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     fontWeight: 700,
                     letterSpacing: '0.5px',
                     fontSize: '1.5rem',
@@ -214,7 +214,7 @@ const Home = () => {
               className="text-3xl lg:text-4xl font-bold mb-4" 
               style={{ 
                 color: '#67BA6D',
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 wordBreak: 'keep-all'
               }}
             >
@@ -223,7 +223,7 @@ const Home = () => {
             <p 
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 wordBreak: 'keep-all'
               }}
             >
@@ -240,7 +240,7 @@ const Home = () => {
                   className="text-2xl font-bold mb-4" 
                   style={{ 
                     color: '#67BA6D',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -249,7 +249,7 @@ const Home = () => {
                 <p 
                   className="text-gray-700 leading-relaxed text-lg"
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -267,7 +267,7 @@ const Home = () => {
                   className="text-2xl font-bold mb-4" 
                   style={{ 
                     color: '#67BA6D',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -276,7 +276,7 @@ const Home = () => {
                 <p 
                   className="text-gray-700 leading-relaxed text-lg"
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -294,7 +294,7 @@ const Home = () => {
                   className="text-2xl font-bold mb-4" 
                   style={{ 
                     color: '#67BA6D',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -303,7 +303,7 @@ const Home = () => {
                 <p 
                   className="text-gray-700 leading-relaxed text-lg"
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
