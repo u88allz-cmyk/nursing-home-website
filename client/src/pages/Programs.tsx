@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle } from "lucide-react";
 import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
 import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
 import physicalTherapyImage from "@assets/물리치료 프로그램_1762848231639.jpg";
 import cognitiveActivityImage from "@assets/인지 활동 프로그램_1762850862757.jpg";
 import leisureCultureImage from "@assets/여가 문화 프로그램_1762850981696.jpg";
 import healthManagementImage from "@assets/건강 관리 프로그램_1762851122519.jpg";
+import counselingSupportImage from "@assets/상담 지원 프로그램_1762851220735.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,7 +54,7 @@ const Programs = () => {
       description: "정기 건강 체크와 만성질환 관리로 어르신들의 건강을 체계적으로 관리합니다. 예방 중심의 건강 케어를 제공합니다."
     },
     {
-      icon: MessageCircle,
+      image: counselingSupportImage,
       title: "상담 지원 프로그램",
       description: "심리적 안정과 정서적 지원을 통해 마음의 건강을 돌봅니다. 개별 상담을 통해 어르신들의 정서적 안정을 도모합니다."
     }
@@ -125,22 +125,13 @@ const Programs = () => {
                 data-testid={`card-program-${index}`}
               >
                 <CardContent className="p-8">
-                  {program.image ? (
-                    <div className="mb-6 rounded-2xl overflow-hidden">
-                      <img 
-                        src={program.image} 
-                        alt={program.title}
-                        className="w-full h-48 object-cover"
-                      />
-                    </div>
-                  ) : program.icon ? (
-                    <div 
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-                      style={{ backgroundColor: '#67BA6D20' }}
-                    >
-                      <program.icon className="h-8 w-8" style={{ color: '#67BA6D' }} />
-                    </div>
-                  ) : null}
+                  <div className="mb-6 rounded-2xl overflow-hidden">
+                    <img 
+                      src={program.image} 
+                      alt={program.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
                   <h3 
                     className="text-xl font-bold mb-4"
                     style={{ 
@@ -188,22 +179,13 @@ const Programs = () => {
                   <div key={index} className="w-full flex-shrink-0 px-2">
                     <Card className="border-2 shadow-lg">
                       <CardContent className="p-6">
-                        {program.image ? (
-                          <div className="mb-6 rounded-2xl overflow-hidden">
-                            <img 
-                              src={program.image} 
-                              alt={program.title}
-                              className="w-full h-40 object-cover"
-                            />
-                          </div>
-                        ) : program.icon ? (
-                          <div 
-                            className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-                            style={{ backgroundColor: '#67BA6D20' }}
-                          >
-                            <program.icon className="h-8 w-8" style={{ color: '#67BA6D' }} />
-                          </div>
-                        ) : null}
+                        <div className="mb-6 rounded-2xl overflow-hidden">
+                          <img 
+                            src={program.image} 
+                            alt={program.title}
+                            className="w-full h-40 object-cover"
+                          />
+                        </div>
                         <h3 
                           className="text-xl font-bold mb-4"
                           style={{ 
