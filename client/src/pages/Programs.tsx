@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Activity, Users, Palette, Shield, MessageCircle } from "lucide-react";
+import { Activity, Users, Palette, Shield, MessageCircle } from "lucide-react";
 import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
+import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,7 +25,7 @@ const Programs = () => {
       description: "요양원 입소 전 장기요양등급 판정을 위해 요양등급 신청부터 인정조사, 등급 판정까지 전 과정을 체계적으로 안내하고 지원합니다. 서류 작성 및 절차 진행을 전문적으로 도와드립니다."
     },
     {
-      icon: Heart,
+      image: dailyLifeImage,
       title: "일상생활 지원",
       description: "식사, 목욕, 복약관리 등 어르신들의 일상생활을 세심하게 도와드리며, 개별 맞춤 케어를 통해 편안한 일상을 지원합니다."
     },
