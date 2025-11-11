@@ -1,10 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Palette, Shield, MessageCircle } from "lucide-react";
+import { Shield, MessageCircle } from "lucide-react";
 import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
 import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
 import physicalTherapyImage from "@assets/물리치료 프로그램_1762848231639.jpg";
 import cognitiveActivityImage from "@assets/인지 활동 프로그램_1762850862757.jpg";
+import leisureCultureImage from "@assets/여가 문화 프로그램_1762850981696.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,7 +43,7 @@ const Programs = () => {
       description: "치매 예방과 인지능력 향상을 위한 다양한 활동을 제공합니다. 개별 수준에 맞는 프로그램으로 두뇌 건강을 관리합니다."
     },
     {
-      icon: Palette,
+      image: leisureCultureImage,
       title: "여가 문화 프로그램",
       description: "음악, 미술, 원예 등 다양한 여가 활동으로 삶의 질을 높입니다. 창작 활동을 통해 성취감과 즐거움을 제공합니다."
     },
