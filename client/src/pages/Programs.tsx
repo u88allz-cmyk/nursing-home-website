@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Activity, Users, Palette, Shield, MessageCircle } from "lucide-react";
+import { Users, Palette, Shield, MessageCircle } from "lucide-react";
 import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
 import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
+import physicalTherapyImage from "@assets/물리치료 프로그램_1762848231639.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,7 +31,7 @@ const Programs = () => {
       description: "식사, 목욕, 복약관리 등 어르신들의 일상생활을 세심하게 도와드리며, 개별 맞춤 케어를 통해 편안한 일상을 지원합니다."
     },
     {
-      icon: Activity,
+      image: physicalTherapyImage,
       title: "물리치료 프로그램",
       description: "관절 운동, 근력 강화, 보행 훈련을 통해 신체 기능을 유지하고 향상시킵니다. 전문 물리치료사의 체계적인 프로그램을 제공합니다."
     },
