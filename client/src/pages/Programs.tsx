@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
 import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
 import physicalTherapyImage from "@assets/물리치료 프로그램_1762848231639.jpg";
 import cognitiveActivityImage from "@assets/인지 활동 프로그램_1762850862757.jpg";
 import leisureCultureImage from "@assets/여가 문화 프로그램_1762850981696.jpg";
+import healthManagementImage from "@assets/건강 관리 프로그램_1762851122519.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,7 +49,7 @@ const Programs = () => {
       description: "음악, 미술, 원예 등 다양한 여가 활동으로 삶의 질을 높입니다. 창작 활동을 통해 성취감과 즐거움을 제공합니다."
     },
     {
-      icon: Shield,
+      image: healthManagementImage,
       title: "건강 관리 프로그램",
       description: "정기 건강 체크와 만성질환 관리로 어르신들의 건강을 체계적으로 관리합니다. 예방 중심의 건강 케어를 제공합니다."
     },
