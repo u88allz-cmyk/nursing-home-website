@@ -97,7 +97,7 @@ const Programs = () => {
                 fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
               }}
             >
-              프로그램 안내
+              서비스 안내
             </h1>
             <p 
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
@@ -106,7 +106,7 @@ const Programs = () => {
                 wordBreak: 'keep-all'
               }}
             >
-              바른 마음, 바른 태도, 바른 정성으로 어르신들을 건강하고 편안하게 모시기 위한 다양한 프로그램을 운영합니다.
+              바른 마음, 바른 태도, 바른 정성으로 어르신들을 건강하고 편안하게 모시기 위한 다양한 서비스와 프로그램을 운영합니다.
             </p>
           </div>
 
