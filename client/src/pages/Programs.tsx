@@ -1,9 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Palette, Shield, MessageCircle } from "lucide-react";
+import { Palette, Shield, MessageCircle } from "lucide-react";
 import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
 import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
 import physicalTherapyImage from "@assets/물리치료 프로그램_1762848231639.jpg";
+import cognitiveActivityImage from "@assets/인지 활동 프로그램_1762850862757.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,7 +37,7 @@ const Programs = () => {
       description: "관절 운동, 근력 강화, 보행 훈련을 통해 신체 기능을 유지하고 향상시킵니다. 전문 물리치료사의 체계적인 프로그램을 제공합니다."
     },
     {
-      icon: Users,
+      image: cognitiveActivityImage,
       title: "인지 활동 프로그램",
       description: "치매 예방과 인지능력 향상을 위한 다양한 활동을 제공합니다. 개별 수준에 맞는 프로그램으로 두뇌 건강을 관리합니다."
     },
