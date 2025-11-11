@@ -72,7 +72,7 @@ const Gallery = () => {
               className="text-4xl lg:text-5xl font-bold mb-6"
               style={{ 
                 color: '#67BA6D',
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
               }}
             >
               시설안내
@@ -80,7 +80,7 @@ const Gallery = () => {
             <p 
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 wordBreak: 'keep-all'
               }}
             >
@@ -112,7 +112,7 @@ const Gallery = () => {
           <p 
             className="text-center text-gray-500 mt-12"
             style={{ 
-              fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+              fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
               wordBreak: 'keep-all'
             }}
           >

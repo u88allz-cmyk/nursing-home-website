@@ -12,7 +12,7 @@ const Contact = () => {
               className="text-4xl md:text-5xl font-bold mb-6"
               style={{ 
                 color: '#67BA6D',
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
               }}
             >
               상담안내
@@ -20,7 +20,7 @@ const Contact = () => {
             <p 
               className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 wordBreak: 'keep-all'
               }}
             >
@@ -43,7 +43,7 @@ const Contact = () => {
                   className="text-2xl font-bold mb-4"
                   style={{ 
                     color: '#67BA6D',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                   }}
                 >
                   전화 상담
@@ -51,7 +51,7 @@ const Contact = () => {
                 <p 
                   className="text-gray-600 mb-6 text-base leading-relaxed"
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -64,7 +64,7 @@ const Contact = () => {
                     className="w-full text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold hover:scale-105"
                     style={{ 
                       backgroundColor: '#67BA6D',
-                      fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                      fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                     }}
                     data-testid="button-call-contact"
                   >
@@ -74,7 +74,7 @@ const Contact = () => {
                 </a>
                 <p 
                   className="text-sm text-gray-500 mt-4"
-                  style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
+                  style={{ fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif' }}
                 >
                   전화 상담 예약
                 </p>
@@ -94,7 +94,7 @@ const Contact = () => {
                   className="text-2xl font-bold mb-4"
                   style={{ 
                     color: '#67BA6D',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                   }}
                 >
                   네이버 예약
@@ -102,7 +102,7 @@ const Contact = () => {
                 <p 
                   className="text-gray-600 mb-6 text-base leading-relaxed"
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >
@@ -121,7 +121,7 @@ const Contact = () => {
                     style={{ 
                       borderColor: '#67BA6D',
                       color: '#67BA6D',
-                      fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                      fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                     }}
                     data-testid="button-naver-booking"
                   >
@@ -131,7 +131,7 @@ const Contact = () => {
                 </a>
                 <p 
                   className="text-sm text-gray-500 mt-4"
-                  style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
+                  style={{ fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif' }}
                 >
                   네이버 상담 예약
                 </p>
@@ -147,7 +147,7 @@ const Contact = () => {
                   className="text-xl font-bold mb-4 text-center"
                   style={{ 
                     color: '#67BA6D',
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                   }}
                 >
                   상담 안내
@@ -155,7 +155,7 @@ const Contact = () => {
                 <ul 
                   className="space-y-3 text-gray-700"
                   style={{ 
-                    fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                    fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                     wordBreak: 'keep-all'
                   }}
                 >

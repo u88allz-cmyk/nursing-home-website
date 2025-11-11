@@ -100,7 +100,7 @@ const Programs = () => {
               className="text-4xl lg:text-5xl font-bold mb-6"
               style={{ 
                 color: '#67BA6D',
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
               }}
             >
               서비스 안내
@@ -108,7 +108,7 @@ const Programs = () => {
             <p 
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 wordBreak: 'keep-all'
               }}
             >
@@ -136,7 +136,7 @@ const Programs = () => {
                     className="text-xl font-bold mb-4"
                     style={{ 
                       color: '#67BA6D',
-                      fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                      fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                     }}
                   >
                     {program.title}
@@ -144,7 +144,7 @@ const Programs = () => {
                   <p 
                     className="text-gray-700 leading-relaxed"
                     style={{ 
-                      fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                      fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                       wordBreak: 'keep-all'
                     }}
                   >
@@ -190,7 +190,7 @@ const Programs = () => {
                           className="text-xl font-bold mb-4"
                           style={{ 
                             color: '#67BA6D',
-                            fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                            fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                           }}
                         >
                           {program.title}
@@ -198,7 +198,7 @@ const Programs = () => {
                         <p 
                           className="text-gray-700 leading-relaxed"
                           style={{ 
-                            fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                            fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                             wordBreak: 'keep-all'
                           }}
                         >
@@ -230,7 +230,7 @@ const Programs = () => {
 
             <p 
               className="text-center text-sm text-gray-500 mt-4"
-              style={{ fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif' }}
+              style={{ fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif' }}
             >
               좌우로 밀어서 볼 수 있습니다 ({currentSlide + 1}/{programs.length})
             </p>

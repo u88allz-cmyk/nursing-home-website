@@ -34,7 +34,7 @@ const Location = () => {
               className="text-4xl md:text-5xl font-bold mb-6"
               style={{ 
                 color: '#67BA6D',
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
               }}
             >
               오시는길
@@ -42,7 +42,7 @@ const Location = () => {
             <p 
               className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
               style={{ 
-                fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                 wordBreak: 'keep-all'
               }}
             >
@@ -78,7 +78,7 @@ const Location = () => {
                         className="text-xl font-bold"
                         style={{ 
                           color: '#67BA6D',
-                          fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif'
+                          fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
                         }}
                       >
                         {info.title}
@@ -87,7 +87,7 @@ const Location = () => {
                     <div 
                       className="text-gray-700 leading-relaxed whitespace-pre-line text-base"
                       style={{ 
-                        fontFamily: 'LotteMartHappy, Noto Sans KR, sans-serif',
+                        fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif',
                         wordBreak: 'keep-all'
                       }}
                     >
