@@ -34,6 +34,11 @@ const Programs = () => {
       description: "식사, 목욕, 복약관리 등 어르신들의 일상생활을 세심하게 도와드리며, 개별 맞춤 케어를 통해 편안한 일상을 지원합니다."
     },
     {
+      image: healthManagementImage,
+      title: "건강 관리 프로그램",
+      description: "정기 건강 체크와 만성질환 관리로 어르신들의 건강을 체계적으로 관리합니다. 예방 중심의 건강 케어를 제공합니다."
+    },
+    {
       image: physicalTherapyImage,
       title: "물리치료 프로그램",
       description: "관절 운동, 근력 강화, 보행 훈련을 통해 신체 기능을 유지하고 향상시킵니다. 전문 물리치료사의 체계적인 프로그램을 제공합니다."
@@ -47,11 +52,6 @@ const Programs = () => {
       image: leisureCultureImage,
       title: "여가 문화 프로그램",
       description: "음악, 미술, 원예 등 다양한 여가 활동으로 삶의 질을 높입니다. 창작 활동을 통해 성취감과 즐거움을 제공합니다."
-    },
-    {
-      image: healthManagementImage,
-      title: "건강 관리 프로그램",
-      description: "정기 건강 체크와 만성질환 관리로 어르신들의 건강을 체계적으로 관리합니다. 예방 중심의 건강 케어를 제공합니다."
     },
     {
       image: counselingSupportImage,
