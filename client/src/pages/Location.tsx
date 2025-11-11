@@ -20,7 +20,7 @@ const Location = () => {
     {
       icon: Car,
       title: "주차 안내",
-      content: "건물 맞은편 송우로 제2 공영주차장 이용\n(1시간 무료)",
+      content: "송우로 제1공영주차장 이용\n주소: 경기 포천시 소흘읍 송우리 726-81\n(1시간 무료)",
       color: "accent"
     }
   ];
