@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762847799482.jpg";
-import dailyLifeImage from "@assets/일상생활 지원_1762848110624.jpg";
-import physicalTherapyImage from "@assets/물리치료 프로그램_1762848231639.jpg";
-import cognitiveActivityImage from "@assets/인지 활동 프로그램_1762850862757.jpg";
-import leisureCultureImage from "@assets/여가 문화 프로그램_1762850981696.jpg";
-import healthManagementImage from "@assets/건강 관리 프로그램_1762851122519.jpg";
-import counselingSupportImage from "@assets/상담 지원 프로그램_1762851220735.jpg";
+import careGradeImage from "@assets/요양등급 판정 지원 프로그램_1762916968213.jpg";
+import dailyLifeImage from "@assets/일상생활 지원_1762916971540.jpg";
+import physicalTherapyImage from "@assets/물리치료 프로그램_1762917005550.jpg";
+import cognitiveActivityImage from "@assets/인지 활동 프로그램_1762917010848.jpg";
+import leisureCultureImage from "@assets/여가 문화 프로그램_1762917019037.jpg";
+import healthManagementImage from "@assets/건강 관리 프로그램_1762916999431.jpg";
+import counselingSupportImage from "@assets/상담 지원 프로그램_1762917025721.jpg";
 
 const Programs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
