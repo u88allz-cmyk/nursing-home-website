@@ -8,7 +8,7 @@ const Location = () => {
     {
       icon: MapPin,
       title: "요양원 주소",
-      content: "경기 포천시 소흘읍 송우리 726-78",
+      content: "경기 포천시 소흘읍 송우로 76, 7층",
       color: "primary"
     },
     {
