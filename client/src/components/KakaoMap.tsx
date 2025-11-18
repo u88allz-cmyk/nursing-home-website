@@ -17,7 +17,6 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // 이미 지도가 초기화되었으면 중복 초기화 방지
     if (mapInstance.current) {
       return;
     }
@@ -34,70 +33,61 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       }
 
       try {
-        const geocoder = new window.kakao.maps.services.Geocoder();
-        
-        // 주소로 좌표 검색
-        geocoder.addressSearch('경기 포천시 소흘읍 송우로 76', function(result: any, status: any) {
-          if (status === window.kakao.maps.services.Status.OK) {
-            const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+        // 경기 포천시 소흘읍 송우로 76 (랜드프라자)
+        const coords = new window.kakao.maps.LatLng(37.895, 127.107);
 
-            const options = {
-              center: coords,
-              level: 3
-            };
+        const options = {
+          center: coords,
+          level: 3
+        };
 
-            const map = new window.kakao.maps.Map(mapContainer.current, options);
-            mapInstance.current = map;
+        const map = new window.kakao.maps.Map(mapContainer.current, options);
+        mapInstance.current = map;
 
-            const marker = new window.kakao.maps.Marker({
-              position: coords
-            });
-            marker.setMap(map);
-
-            const content = `
-              <div style="
-                background: white;
-                border: 2px solid #000000;
-                border-radius: 8px;
-                padding: 8px 12px;
-                font-size: 15px;
-                font-weight: bold;
-                color: #000000;
-                box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-                position: relative;
-                text-align: center;
-                white-space: nowrap;
-                font-family: 'LotteMartHappy', 'Noto Sans KR', sans-serif;
-              ">
-                바른나무요양원
-                <div style="
-                  position: absolute;
-                  bottom: -12px;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 0;
-                  height: 0;
-                  border-left: 12px solid transparent;
-                  border-right: 12px solid transparent;
-                  border-top: 12px solid #000000;
-                "></div>
-              </div>
-            `;
-
-            new window.kakao.maps.CustomOverlay({
-              map: map,
-              position: coords,
-              content: content,
-              yAnchor: 1.3
-            });
-
-            setIsLoading(false);
-            setError('');
-          } else {
-            setError('주소를 찾을 수 없습니다.');
-            setIsLoading(false);
-          }
+        const marker = new window.kakao.maps.Marker({
+          position: coords
         });
+        marker.setMap(map);
+
+        const content = `
+          <div style="
+            background: white;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #000000;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            font-family: 'LotteMartHappy', 'Noto Sans KR', sans-serif;
+          ">
+            바른나무요양원
+            <div style="
+              position: absolute;
+              bottom: -12px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 0;
+              height: 0;
+              border-left: 12px solid transparent;
+              border-right: 12px solid transparent;
+              border-top: 12px solid #000000;
+            "></div>
+          </div>
+        `;
+
+        new window.kakao.maps.CustomOverlay({
+          map: map,
+          position: coords,
+          content: content,
+          yAnchor: 1.3
+        });
+
+        setIsLoading(false);
+        setError('');
       } catch (err) {
         console.error('지도 초기화 오류:', err);
         setError('지도를 표시할 수 없습니다.');
@@ -107,7 +97,6 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
 
     setTimeout(initializeMap, 500);
 
-    // 클린업: 컴포넌트 언마운트 시 지도 참조 제거
     return () => {
       mapInstance.current = null;
     };
