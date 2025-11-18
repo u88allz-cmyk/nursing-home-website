@@ -27,12 +27,15 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     const initializeMap = () => {
       console.log('initializeMap 호출됨');
       
-      if (!mapContainer.current || !window.kakao || !window.kakao.maps) {
-        console.log('초기화 조건 실패', {
-          hasContainer: !!mapContainer.current,
-          hasKakao: !!window.kakao,
-          hasMaps: !!window.kakao?.maps
-        });
+      if (!window.kakao || !window.kakao.maps) {
+        console.log('kakao 객체 없음');
+        return;
+      }
+      
+      if (!mapContainer.current) {
+        console.log('컨테이너 없음, 재시도 예약');
+        // DOM이 준비될 때까지 잠시 대기
+        setTimeout(() => initializeMap(), 100);
         return;
       }
 
