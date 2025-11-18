@@ -24,16 +24,15 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       return;
     }
 
-    let scriptElement: HTMLScriptElement | null = null;
-
     const initializeMap = () => {
       console.log('initializeMap 호출됨');
-      console.log('mapContainer.current:', mapContainer.current);
-      console.log('window.kakao:', window.kakao);
-      console.log('window.kakao.maps:', window.kakao?.maps);
       
       if (!mapContainer.current || !window.kakao || !window.kakao.maps) {
-        console.log('초기화 조건 실패');
+        console.log('초기화 조건 실패', {
+          hasContainer: !!mapContainer.current,
+          hasKakao: !!window.kakao,
+          hasMaps: !!window.kakao?.maps
+        });
         return;
       }
 
@@ -94,6 +93,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
           yAnchor: 1.3
         });
 
+        console.log('지도 초기화 완료');
         setIsLoading(false);
         setError('');
       } catch (err) {
@@ -104,31 +104,55 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     };
 
     const loadKakaoScript = () => {
-      console.log('loadKakaoScript 호출됨');
-      // 이미 로드된 경우
-      if (window.kakao && window.kakao.maps) {
-        console.log('kakao 이미 로드됨, maps.load 호출');
-        window.kakao.maps.load(() => {
-          console.log('kakao.maps.load 콜백 실행');
-          initializeMap();
-        });
+      console.log('loadKakaoScript 시작');
+      
+      // 스크립트가 이미 로드되어 있는지 확인
+      const existingScript = document.querySelector('script[src*="dapi.kakao.com"]');
+      
+      if (existingScript) {
+        console.log('기존 스크립트 발견');
+        // 스크립트는 있지만 window.kakao가 아직 로드되지 않았을 수 있음
+        if (window.kakao && window.kakao.maps) {
+          console.log('kakao 객체 사용 가능, maps.load 호출');
+          window.kakao.maps.load(() => {
+            console.log('kakao.maps.load 콜백 실행');
+            initializeMap();
+          });
+        } else {
+          console.log('kakao 객체 대기 중...');
+          // 스크립트가 로드될 때까지 대기
+          const checkKakao = setInterval(() => {
+            if (window.kakao && window.kakao.maps) {
+              console.log('kakao 객체 사용 가능해짐');
+              clearInterval(checkKakao);
+              window.kakao.maps.load(() => {
+                console.log('kakao.maps.load 콜백 실행');
+                initializeMap();
+              });
+            }
+          }, 100);
+          
+          // 10초 후 타임아웃
+          setTimeout(() => {
+            clearInterval(checkKakao);
+            if (!window.kakao || !window.kakao.maps) {
+              console.log('kakao 로딩 타임아웃');
+              setError('지도 라이브러리 로딩 시간 초과');
+              setIsLoading(false);
+            }
+          }, 10000);
+        }
         return;
       }
 
-      // 기존 스크립트 제거
-      const existingScript = document.querySelector('script[src*="dapi.kakao.com"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-
       // 새 스크립트 추가
-      scriptElement = document.createElement('script');
+      console.log('새 스크립트 추가');
+      const scriptElement = document.createElement('script');
       scriptElement.type = 'text/javascript';
       scriptElement.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
       
       scriptElement.onload = () => {
         console.log('kakao 스크립트 로드 완료');
-        console.log('window.kakao:', window.kakao);
         if (window.kakao && window.kakao.maps) {
           console.log('kakao.maps.load 호출');
           window.kakao.maps.load(() => {
@@ -143,6 +167,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       };
 
       scriptElement.onerror = () => {
+        console.log('kakao 스크립트 로드 실패');
         setError('지도 스크립트를 불러올 수 없습니다.');
         setIsLoading(false);
       };
@@ -151,13 +176,6 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     };
 
     loadKakaoScript();
-
-    // Cleanup
-    return () => {
-      if (scriptElement && scriptElement.parentNode) {
-        scriptElement.parentNode.removeChild(scriptElement);
-      }
-    };
   }, []);
 
   if (error) {
