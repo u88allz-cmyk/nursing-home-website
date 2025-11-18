@@ -31,7 +31,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
 
       try {
         console.log('지도 초기화 시작');
-        const coords = new window.kakao.maps.LatLng(37.8945, 127.2001);
+        const coords = new window.kakao.maps.LatLng(37.7469, 127.0881);
 
         const options = {
           center: coords,
@@ -48,12 +48,12 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
         const content = `
           <div style="
             background: white;
-            border: 2px solid #DC3545;
+            border: 2px solid #000000;
             border-radius: 8px;
             padding: 8px 12px;
             font-size: 15px;
             font-weight: bold;
-            color: #DC3545;
+            color: #000000;
             box-shadow: 0 3px 8px rgba(0,0,0,0.15);
             position: relative;
             text-align: center;
@@ -70,7 +70,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
               height: 0;
               border-left: 12px solid transparent;
               border-right: 12px solid transparent;
-              border-top: 12px solid #DC3545;
+              border-top: 12px solid #000000;
             "></div>
           </div>
         `;
