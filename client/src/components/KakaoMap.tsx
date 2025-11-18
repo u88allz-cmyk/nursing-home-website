@@ -33,8 +33,8 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       }
 
       try {
-        // 경기 포천시 소흘읍 송우로 76 (랜드프라자)
-        const coords = new window.kakao.maps.LatLng(37.895, 127.107);
+        // 바른나무요양원 - 경기 포천시 소흘읍 송우로 76 (랜드프라자 7층)
+        const coords = new window.kakao.maps.LatLng(37.7486, 127.1996);
 
         const options = {
           center: coords,
