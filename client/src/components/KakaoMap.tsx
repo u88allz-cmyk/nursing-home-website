@@ -27,11 +27,18 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     let scriptElement: HTMLScriptElement | null = null;
 
     const initializeMap = () => {
+      console.log('initializeMap 호출됨');
+      console.log('mapContainer.current:', mapContainer.current);
+      console.log('window.kakao:', window.kakao);
+      console.log('window.kakao.maps:', window.kakao?.maps);
+      
       if (!mapContainer.current || !window.kakao || !window.kakao.maps) {
+        console.log('초기화 조건 실패');
         return;
       }
 
       try {
+        console.log('지도 초기화 시작');
         // 바른나무요양원 좌표 (경기도 포천시 소흘읍 송우로 76)
         const coords = new window.kakao.maps.LatLng(37.8945, 127.2001);
 
@@ -97,9 +104,12 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     };
 
     const loadKakaoScript = () => {
+      console.log('loadKakaoScript 호출됨');
       // 이미 로드된 경우
       if (window.kakao && window.kakao.maps) {
+        console.log('kakao 이미 로드됨, maps.load 호출');
         window.kakao.maps.load(() => {
+          console.log('kakao.maps.load 콜백 실행');
           initializeMap();
         });
         return;
@@ -117,11 +127,16 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       scriptElement.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
       
       scriptElement.onload = () => {
+        console.log('kakao 스크립트 로드 완료');
+        console.log('window.kakao:', window.kakao);
         if (window.kakao && window.kakao.maps) {
+          console.log('kakao.maps.load 호출');
           window.kakao.maps.load(() => {
+            console.log('kakao.maps.load 콜백 실행');
             initializeMap();
           });
         } else {
+          console.log('kakao 또는 kakao.maps가 없음');
           setError('지도 라이브러리를 불러올 수 없습니다.');
           setIsLoading(false);
         }
