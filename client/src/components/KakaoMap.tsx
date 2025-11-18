@@ -31,7 +31,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
 
       try {
         console.log('지도 초기화 시작');
-        const coords = new window.kakao.maps.LatLng(37.7469, 127.0881);
+        const coords = new window.kakao.maps.LatLng(37.8952, 127.1071);
 
         const options = {
           center: coords,
