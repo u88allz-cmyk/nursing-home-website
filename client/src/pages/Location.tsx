@@ -1,15 +1,26 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Bus, Car } from "lucide-react";
+import { MapPin, Bus, Car, Copy, Check } from "lucide-react";
 import KakaoMap from "@/components/KakaoMap";
 
 const Location = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyAddress = () => {
+    const address = "경기 포천시 소흘읍 송우로 76, 7층";
+    navigator.clipboard.writeText(address).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   const transportInfo = [
     {
       icon: MapPin,
       title: "요양원 주소",
       content: "경기 포천시 소흘읍 송우로 76, 7층",
-      color: "primary"
+      color: "primary",
+      copyable: true
     },
     {
       icon: Bus,
@@ -75,7 +86,7 @@ const Location = () => {
                         <info.icon className="h-6 w-6" style={{ color: '#67BA6D' }} />
                       </div>
                       <h3 
-                        className="text-xl font-bold"
+                        className="text-xl font-bold flex-1"
                         style={{ 
                           color: '#67BA6D',
                           fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
@@ -83,6 +94,29 @@ const Location = () => {
                       >
                         {info.title}
                       </h3>
+                      {info.copyable && (
+                        <button
+                          onClick={handleCopyAddress}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-100"
+                          style={{ 
+                            color: copied ? '#67BA6D' : '#6B7280',
+                            fontFamily: 'Pretendard Variable, Noto Sans KR, sans-serif'
+                          }}
+                          data-testid="button-copy-address"
+                        >
+                          {copied ? (
+                            <>
+                              <Check className="h-4 w-4" />
+                              <span className="text-sm">복사됨</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="h-4 w-4" />
+                              <span className="text-sm">복사</span>
+                            </>
+                          )}
+                        </button>
+                      )}
                     </div>
                     <div 
                       className="text-gray-700 leading-relaxed whitespace-pre-line text-base"
