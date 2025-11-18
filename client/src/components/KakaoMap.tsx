@@ -16,25 +16,16 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    let retryCount = 0;
-    const maxRetries = 50;
-
     const initializeMap = () => {
       if (!mapContainer.current) {
-        console.log('컨테이너 없음');
+        console.log('DOM 준비 대기 중...');
+        setTimeout(initializeMap, 100);
         return;
       }
 
       if (!window.kakao || !window.kakao.maps) {
-        console.log('kakao 대기 중... 시도:', retryCount + 1);
-        retryCount++;
-        
-        if (retryCount < maxRetries) {
-          setTimeout(initializeMap, 200);
-        } else {
-          setError('지도를 불러올 수 없습니다. 페이지를 새로고침 해주세요.');
-          setIsLoading(false);
-        }
+        console.log('카카오 API 로딩 대기 중...');
+        setTimeout(initializeMap, 100);
         return;
       }
 
@@ -91,7 +82,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
           yAnchor: 1.3
         });
 
-        console.log('지도 초기화 완료');
+        console.log('지도 초기화 완료!');
         setIsLoading(false);
         setError('');
       } catch (err) {
@@ -101,7 +92,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       }
     };
 
-    initializeMap();
+    setTimeout(initializeMap, 500);
   }, []);
 
   if (error) {
