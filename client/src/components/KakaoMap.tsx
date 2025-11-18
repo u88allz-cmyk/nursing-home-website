@@ -16,7 +16,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_KAKAO_MAP_API_KEY;
+    const apiKey = import.meta.env.VITE_KAKAO_MAP_KEY;
     
     if (!apiKey) {
       setError('지도 API 키가 설정되지 않았습니다.');
@@ -32,8 +32,8 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       }
 
       try {
-        // 바른나무요양원 좌표 (경기 포천시 소흘읍 송우리 726-78)
-        const coords = new window.kakao.maps.LatLng(37.8302, 127.1411);
+        // 바른나무요양원 좌표 (경기도 포천시 소흘읍 송우로 76)
+        const coords = new window.kakao.maps.LatLng(37.8945, 127.2001);
 
         const options = {
           center: coords,
