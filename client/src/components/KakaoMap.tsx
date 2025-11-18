@@ -57,23 +57,33 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
       const scriptElement = document.createElement('script');
       scriptElement.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
       
+      console.log('카카오 스크립트 URL:', scriptElement.src);
+      
       scriptElement.onload = () => {
+        console.log('스크립트 onload 실행됨');
+        console.log('window.kakao:', window.kakao);
         if (window.kakao && window.kakao.maps) {
+          console.log('kakao.maps.load 호출');
           window.kakao.maps.load(() => {
+            console.log('지도 라이브러리 로드 완료');
             setKakaoLoaded(true);
           });
         } else {
+          console.error('kakao 또는 kakao.maps가 없음');
           setError('지도 라이브러리를 불러올 수 없습니다.');
           setIsLoading(false);
         }
       };
 
-      scriptElement.onerror = () => {
-        setError('지도 스크립트를 불러올 수 없습니다.');
+      scriptElement.onerror = (e) => {
+        console.error('스크립트 로드 실패:', e);
+        console.error('URL:', scriptElement.src);
+        setError('지도 스크립트를 불러올 수 없습니다. 도메인 등록을 확인해주세요.');
         setIsLoading(false);
       };
 
       document.head.appendChild(scriptElement);
+      console.log('스크립트 요소가 head에 추가됨');
     };
 
     loadKakaoScript();
