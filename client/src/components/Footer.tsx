@@ -26,7 +26,14 @@ const Footer = () => {
             바른 마음, 바른 태도, 바른 정성
           </p>
           
-          <p className="text-xs text-gray-500 pt-2">
+          <div className="text-sm text-gray-400 pt-4 space-y-1">
+            <p>대표: 이진규</p>
+            <p>사업자번호: 354-80-03338</p>
+            <p>주소: 경기도 포천시 소흘읍 송우로 76, 7층 (랜드프라자)</p>
+            <p>전화번호: 031-8089-8000</p>
+          </div>
+          
+          <p className="text-xs text-gray-500 pt-4">
             COPYRIGHT © 2024 바른나무요양원. All rights reserved.
           </p>
         </div>
