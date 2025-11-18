@@ -95,31 +95,28 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
     setTimeout(initializeMap, 500);
   }, []);
 
-  if (error) {
-    return (
-      <div 
-        className={`w-full h-full min-h-[350px] rounded-2xl bg-gray-100 flex items-center justify-center ${className}`}
-      >
-        <p className="text-gray-500">{error}</p>
-      </div>
-    );
-  }
-
-  if (isLoading) {
-    return (
-      <div 
-        className={`w-full h-full min-h-[350px] rounded-2xl bg-gray-100 flex items-center justify-center ${className}`}
-      >
-        <p className="text-gray-500">지도를 불러오는 중...</p>
-      </div>
-    );
-  }
-
   return (
-    <div 
-      ref={mapContainer} 
-      className={`w-full h-full min-h-[350px] rounded-2xl bg-gray-100 ${className}`}
-    />
+    <div className={`relative w-full h-full min-h-[350px] ${className}`}>
+      {/* 지도 컨테이너 - 항상 렌더링 */}
+      <div 
+        ref={mapContainer} 
+        className="w-full h-full min-h-[350px] rounded-2xl bg-gray-100"
+      />
+      
+      {/* 로딩 오버레이 */}
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-2xl">
+          <p className="text-gray-500">지도를 불러오는 중...</p>
+        </div>
+      )}
+      
+      {/* 에러 오버레이 */}
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-2xl">
+          <p className="text-gray-500">{error}</p>
+        </div>
+      )}
+    </div>
   );
 };
 
