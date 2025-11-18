@@ -16,7 +16,7 @@ const KakaoMap = ({ className = "" }: KakaoMapProps) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_KAKAO_MAP_KEY;
+    const apiKey = '6ea8ad8f8c599b803f85ee9d9016c9b1';
     
     if (!apiKey) {
       setError('지도 API 키가 설정되지 않았습니다.');
