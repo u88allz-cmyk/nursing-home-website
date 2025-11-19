@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://your-replit-domain.replit.app/sitemap.xml
+Sitemap: https://brnamu.co.kr/sitemap.xml
