@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sunandmoonursinghome.shop/</loc>
+    <loc>https://brnamu.co.kr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sunandmoonursinghome.shop/about</loc>
+    <loc>https://brnamu.co.kr/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sunandmoonursinghome.shop/programs</loc>
+    <loc>https://brnamu.co.kr/programs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sunandmoonursinghome.shop/gallery</loc>
+    <loc>https://brnamu.co.kr/gallery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sunandmoonursinghome.shop/contact</loc>
+    <loc>https://brnamu.co.kr/guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://brnamu.co.kr/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sunandmoonursinghome.shop/location</loc>
+    <loc>https://brnamu.co.kr/location</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sunandmoonursinghome.shop/guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://sunandmoonursinghome.shop/faq</loc>
+    <loc>https://brnamu.co.kr/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
