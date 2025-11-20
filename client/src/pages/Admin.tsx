@@ -19,7 +19,7 @@ const Admin = () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    document.title = "관리자 페이지 - 해와달 요양원 | 상담 신청 관리";
+    document.title = "관리자 페이지 - 바른나무요양원 | 상담 신청 관리";
   }, []);
 
   const { data: contacts, isLoading, error } = useQuery({
@@ -30,7 +30,7 @@ const Admin = () => {
 
   const handleLogin = () => {
     // 간단한 패스워드 인증 (실제 환경에서는 보안 강화 필요)
-    if (password === "haewadal2025") {
+    if (password === "barunamu2025") {
       setIsAuthorized(true);
     } else {
       alert("비밀번호가 올바르지 않습니다.");

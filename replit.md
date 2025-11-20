@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive healthcare management system built for a Korean nursing home (해와달 요양원). The application provides a professional website with contact form functionality, facility information, and program details. Built with modern web technologies including React, TypeScript, Express.js, and PostgreSQL.
+A comprehensive healthcare management system built for a Korean nursing home (바른나무요양원). The application provides a professional website with contact form functionality, facility information, and program details. Built with modern web technologies including React, TypeScript, Express.js, and PostgreSQL.
 
 ## System Architecture
 
@@ -107,24 +107,18 @@ A comprehensive healthcare management system built for a Korean nursing home (�
 
 ## Changelog
 
-### June 30, 2025 - Kakao Maps Integration & SEO Setup
-- **Kakao Maps API integration with keyword search functionality**
-- Successfully implemented location display using "해와달 요양원 양주" search
-- Fixed InfoWindow styling to show only facility name with red CustomOverlay
-- Added debugging logs for troubleshooting deployment issues
-- **Naver Search Advisor verification issues resolved**
-- Fixed HTML verification file placement in public folder
-- Added meta tag verification method for dual verification
-- SEO optimization complete with proper naver-site-verification meta tag
+### November 20, 2025 - Barunamu Nursing Home Updates
+- **Kakao Maps API integration with direct coordinates**
+- Location display for 바른나무요양원 at 경기 포천시 소흘읍 송우로 76
+- Map marker with black CustomOverlay label
+- **Naver Search Advisor verification complete**
+- SEO optimization with naver-site-verification meta tag
 - **Enhanced SEO meta tags for Naver search optimization**
-- Updated meta description to 80 characters for search engine compliance
-- Added comprehensive keywords targeting "양주요양원", "해와달요양원"
-- Implemented geo-location tags for local search optimization
+- Keywords targeting "포천요양원", "바른나무요양원"
+- Geo-location tags for 포천시 local search
 - **Sitemap.xml updated with correct production domain**
-- Changed all URLs from placeholder to https://sunandmoonursinghome.shop
-- **Environment variable setup required for Netlify deployment**
-- VITE_KAKAO_MAP_API_KEY must be configured in Netlify dashboard
-- Address updated to "경기 양주시 평화로 1426 (6,7층)"
+- All URLs updated to https://brnamu.co.kr
+- Address: "경기도 포천시 소흘읍 송우로 76, 7층"
 
 ### June 26, 2025 - Netlify Forms Integration Complete
 - **Successfully converted contact form to Netlify Forms**
